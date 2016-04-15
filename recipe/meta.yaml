@@ -1,7 +1,7 @@
 package:
   name: ibis-framework
   version: "0.7.1"
-
+     
 source:
   fn: ibis-framework-0.7.1.tar.gz
   url: https://pypi.python.org/packages/source/i/ibis-framework/ibis-framework-0.7.1.tar.gz
