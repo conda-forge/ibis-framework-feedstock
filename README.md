@@ -5,7 +5,7 @@ Home: http://www.ibis-project.org
 
 Package license: Apache 2.0
 
-Feedstock license: BSD
+Feedstock license: BSD 3-Clause
 
 Summary: Productivity-centric Python Big Data Framework
 
@@ -69,6 +69,7 @@ Terminology
 
 Current build status
 ====================
+
 Linux: [![Circle CI](https://circleci.com/gh/conda-forge/ibis-framework-feedstock.svg?style=svg)](https://circleci.com/gh/conda-forge/ibis-framework-feedstock)
 OSX: [![TravisCI](https://travis-ci.org/conda-forge/ibis-framework-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/ibis-framework-feedstock) 
 Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/ibis-framework-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/ibis-framework-feedstock/branch/master)
