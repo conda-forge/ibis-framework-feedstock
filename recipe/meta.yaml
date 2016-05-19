@@ -1,11 +1,11 @@
 package:
   name: ibis-framework
-  version: "0.8.0"
+  version: "0.8.1"
 
 source:
-  fn: ibis-framework-0.8.0.tar.gz
-  url: https://pypi.python.org/packages/source/i/ibis-framework/ibis-framework-0.8.0.tar.gz
-  md5: fc28357db5f14c3dfa54ce9d569b0739
+  fn: ibis-framework-0.8.1.tar.gz
+  url: https://pypi.python.org/packages/source/i/ibis-framework/ibis-framework-0.8.1.tar.gz
+  md5: 18cda0ac0d0f7fc2d69798ca7ed0300d
 
 build:
   number: 0
