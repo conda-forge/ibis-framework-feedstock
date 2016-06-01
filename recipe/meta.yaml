@@ -1,11 +1,11 @@
 package:
   name: ibis-framework
-  version: "0.7.1"
+  version: "0.8.1"
 
 source:
-  fn: ibis-framework-0.7.1.tar.gz
-  url: https://pypi.python.org/packages/source/i/ibis-framework/ibis-framework-0.7.1.tar.gz
-  md5: 2b57e8a68cab182554fc7be7d0774f32
+  fn: ibis-framework-0.8.1.tar.gz
+  url: https://pypi.io/packages/source/i/ibis-framework/ibis-framework-0.8.1.tar.gz
+  md5: 18cda0ac0d0f7fc2d69798ca7ed0300d
 
 build:
   number: 0
@@ -18,7 +18,7 @@ requirements:
     - pytest
     - numpy >=1.7.0
     - pandas >=0.12.0
-    - impyla >=0.13.6
+    - impyla >=0.13.8
     - python-hdfs >=2.0.0
     - sqlalchemy >=1.0.0
     - six
@@ -29,10 +29,11 @@ requirements:
     - pytest
     - numpy >=1.7.0
     - pandas >=0.12.0
-    - impyla >=0.13.6
+    - impyla >=0.13.8
     - python-hdfs >=2.0.0
     - sqlalchemy >=1.0.0
     - six
+    - toolz
     - mock  # [py<35]
 
 test:
@@ -66,3 +67,4 @@ about:
 extra:
   recipe-maintainers:
     - mariusvniekerk
+    - wesm
