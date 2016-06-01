@@ -4,7 +4,7 @@ package:
 
 source:
   fn: ibis-framework-0.8.1.tar.gz
-  url: https://pypi.python.org/packages/source/i/ibis-framework/ibis-framework-0.8.1.tar.gz
+  url: https://pypi.io/packages/source/i/ibis-framework/ibis-framework-0.8.1.tar.gz
   md5: 18cda0ac0d0f7fc2d69798ca7ed0300d
 
 build:
