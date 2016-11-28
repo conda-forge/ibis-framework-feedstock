@@ -1,11 +1,13 @@
+{% set version = "0.9.0" %}
+
 package:
   name: ibis-framework
-  version: "0.8.1"
+  version: {{ version }}
 
 source:
-  fn: ibis-framework-0.8.1.tar.gz
-  url: https://pypi.io/packages/source/i/ibis-framework/ibis-framework-0.8.1.tar.gz
-  md5: 18cda0ac0d0f7fc2d69798ca7ed0300d
+  fn: ibis-framework-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/i/ibis-framework/ibis-framework-{{ version }}.tar.gz
+  md5: d51d677e157ec4232cd925690af4a878
 
 build:
   number: 0
@@ -16,9 +18,9 @@ requirements:
     - python
     - setuptools
     - pytest
-    - numpy >=1.7.0
-    - pandas >=0.12.0
-    - impyla >=0.13.8
+    - numpy >=1.9.0
+    - pandas >=0.19.0
+    - impyla >=0.14.0
     - python-hdfs >=2.0.0
     - sqlalchemy >=1.0.0
     - six
@@ -27,9 +29,9 @@ requirements:
   run:
     - python
     - pytest
-    - numpy >=1.7.0
-    - pandas >=0.12.0
-    - impyla >=0.13.8
+    - numpy >=1.9.0
+    - pandas >=0.19.0
+    - impyla >=0.14.0
     - python-hdfs >=2.0.0
     - sqlalchemy >=1.0.0
     - six
