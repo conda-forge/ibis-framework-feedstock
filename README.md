@@ -11,6 +11,18 @@ Summary: Productivity-centric Python Big Data Framework
 
 
 
+Current build status
+====================
+
+Linux: [![Circle CI](https://circleci.com/gh/conda-forge/ibis-framework-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/ibis-framework-feedstock)
+OSX: [![TravisCI](https://travis-ci.org/conda-forge/ibis-framework-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/ibis-framework-feedstock)
+Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/ibis-framework-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/ibis-framework-feedstock/branch/master)
+
+Current release info
+====================
+Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/ibis-framework/badges/version.svg)](https://anaconda.org/conda-forge/ibis-framework)
+Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/ibis-framework/badges/downloads.svg)](https://anaconda.org/conda-forge/ibis-framework)
+
 Installing ibis-framework
 =========================
 
@@ -66,18 +78,6 @@ Terminology
 
 **conda-forge** - the place where the feedstock and smithy live and work to
                   produce the finished article (built conda distributions)
-
-Current build status
-====================
-
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/ibis-framework-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/ibis-framework-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/ibis-framework-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/ibis-framework-feedstock)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/ibis-framework-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/ibis-framework-feedstock/branch/master)
-
-Current release info
-====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/ibis-framework/badges/version.svg)](https://anaconda.org/conda-forge/ibis-framework)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/ibis-framework/badges/downloads.svg)](https://anaconda.org/conda-forge/ibis-framework)
 
 
 Updating ibis-framework-feedstock
