@@ -1,4 +1,4 @@
-{% set version = "0.9.0" %}
+{% set version = "0.10.0" %}
 
 package:
   name: ibis-framework
@@ -7,7 +7,7 @@ package:
 source:
   fn: ibis-framework-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/i/ibis-framework/ibis-framework-{{ version }}.tar.gz
-  md5: d51d677e157ec4232cd925690af4a878
+  md5: 63543265b33269b129e1f9ddaaab809e
 
 build:
   number: 0
@@ -68,5 +68,6 @@ about:
 
 extra:
   recipe-maintainers:
+    - cpcloud
     - mariusvniekerk
     - wesm
