@@ -1,4 +1,4 @@
-{% set version = "0.10.0" %}
+{% set version = "0.11.0" %}
 
 package:
   name: ibis-framework
@@ -7,7 +7,7 @@ package:
 source:
   fn: ibis-framework-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/i/ibis-framework/ibis-framework-{{ version }}.tar.gz
-  md5: 63543265b33269b129e1f9ddaaab809e
+  md5: e8fbd6647adb2b907ad61c25ca094223
 
 build:
   number: 0
@@ -15,30 +15,41 @@ build:
 
 requirements:
   build:
-    - python
-    - setuptools
-    - pytest
+    - enum34  # [py27]
+    - graphviz
+    - impyla >=0.14.0
+    - multipledispatch
     - numpy >=1.9.0
     - pandas >=0.19.0
-    - impyla >=0.14.0
+    - psycopg2
+    - python
+    - python-graphviz
     - python-hdfs >=2.0.0
-    - sqlalchemy >=1.0.0
+    - setuptools
     - six
-    - mock  # [py<35]
+    - sqlalchemy >=1.0.0
+    - toolz
 
   run:
-    - python
-    - pytest
+    - enum34  # [py27]
+    - graphviz
+    - impyla >=0.14.0
+    - multipledispatch
     - numpy >=1.9.0
     - pandas >=0.19.0
-    - impyla >=0.14.0
+    - psycopg2
+    - python
+    - python-graphviz
     - python-hdfs >=2.0.0
-    - sqlalchemy >=1.0.0
     - six
+    - sqlalchemy >=1.0.0
     - toolz
-    - mock  # [py<35]
 
 test:
+  requires:
+    - pytest >=3  # [py3k]
+    - pytest <3  # [py27]
+    - mock  # [py27]
   imports:
     - ibis
     - ibis.expr
