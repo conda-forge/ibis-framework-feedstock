@@ -1,4 +1,4 @@
-{% set version = "0.10.0" %}
+{% set version = "0.11.2" %}
 
 package:
   name: ibis-framework
@@ -7,7 +7,7 @@ package:
 source:
   fn: ibis-framework-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/i/ibis-framework/ibis-framework-{{ version }}.tar.gz
-  md5: 63543265b33269b129e1f9ddaaab809e
+  md5: 63c5e74eaccb075794dc15585fcf37a3
 
 build:
   number: 0
@@ -15,38 +15,50 @@ build:
 
 requirements:
   build:
-    - python
-    - setuptools
-    - pytest
-    - numpy >=1.9.0
-    - pandas >=0.19.0
+    - enum34  # [py27]
+    - graphviz
     - impyla >=0.14.0
+    - multipledispatch
+    - numpy >=1.10.0
+    - pandas >=0.18.1
+    - psycopg2
+    - python
+    - python-graphviz
     - python-hdfs >=2.0.0
-    - sqlalchemy >=1.0.0
+    - setuptools
     - six
-    - mock  # [py<35]
+    - sqlalchemy >=1.0.0
+    - toolz
 
   run:
-    - python
-    - pytest
-    - numpy >=1.9.0
-    - pandas >=0.19.0
+    - enum34  # [py27]
+    - graphviz
     - impyla >=0.14.0
+    - multipledispatch
+    - numpy >=1.10.0
+    - pandas >=0.18.1
+    - psycopg2
+    - python
+    - python-graphviz
     - python-hdfs >=2.0.0
-    - sqlalchemy >=1.0.0
+    - setuptools
     - six
+    - sqlalchemy >=1.0.0
     - toolz
-    - mock  # [py<35]
 
 test:
+  requires:
+    - pytest >=3  # [py3k]
+    - pytest <3  # [py27]
+    - mock  # [py27]
   imports:
     - ibis
     - ibis.expr
     - ibis.expr.tests
     - ibis.hive
     - ibis.hive.tests
-    - ibis.impala
-    - ibis.impala.tests
+    - ibis.impala  # [linux]
+    - ibis.impala.tests  # [linux]
     - ibis.spark
     - ibis.spark.tests
     - ibis.sql
