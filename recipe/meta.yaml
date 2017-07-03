@@ -19,8 +19,8 @@ requirements:
     - graphviz
     - impyla >=0.14.0
     - multipledispatch
-    - numpy >=1.9.0
-    - pandas >=0.19.0
+    - numpy >=1.10.0
+    - pandas >=0.18.1
     - psycopg2
     - python
     - python-graphviz
@@ -35,8 +35,8 @@ requirements:
     - graphviz
     - impyla >=0.14.0
     - multipledispatch
-    - numpy >=1.9.0
-    - pandas >=0.19.0
+    - numpy >=1.10.0
+    - pandas >=0.18.1
     - psycopg2
     - python
     - python-graphviz
