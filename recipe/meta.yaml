@@ -24,10 +24,13 @@ requirements:
     - psycopg2
     - python
     - python-graphviz
-    - python-hdfs >=2.0.0
+    - python-hdfs >=2.0.0  # [not py36]
     - setuptools
     - six
     - sqlalchemy >=1.0.0
+    - thrift  # [py36]
+    - thrift<=0.9.3  # [not py36]
+    - thriftpy<=0.3.9
     - toolz
 
   run:
@@ -40,16 +43,18 @@ requirements:
     - psycopg2
     - python
     - python-graphviz
-    - python-hdfs >=2.0.0
+    - python-hdfs >=2.0.0  # [not py36]
     - setuptools
     - six
     - sqlalchemy >=1.0.0
+    - thrift  # [py36]
+    - thrift<=0.9.3  # [not py36]
+    - thriftpy<=0.3.9
     - toolz
 
 test:
   requires:
-    - pytest >=3  # [py3k]
-    - pytest <3  # [py27]
+    - pytest >=3
     - mock  # [py27]
   imports:
     - ibis
