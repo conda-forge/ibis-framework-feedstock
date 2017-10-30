@@ -10,7 +10,7 @@ source:
   md5: b452f718ab8c607b01405e8ee40abf86
 
 build:
-  number: 1
+  number: 2
   script: python setup.py install --single-version-externally-managed --record record.txt
 
 requirements:
@@ -24,7 +24,7 @@ requirements:
     - psycopg2
     - python
     - python-graphviz
-    - python-hdfs >=2.0.0  # [not py36]
+    - python-hdfs >=2.0.0
     - setuptools
     - six
     - sqlalchemy >=1.0.0
@@ -43,7 +43,7 @@ requirements:
     - psycopg2
     - python
     - python-graphviz
-    - python-hdfs >=2.0.0  # [not py36]
+    - python-hdfs >=2.0.0
     - setuptools
     - six
     - sqlalchemy >=1.0.0
