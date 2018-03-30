@@ -1,55 +1,56 @@
-{% set version = "0.12.0" %}
+{% set version = "0.13.0" %}
 
 package:
   name: ibis-framework
   version: {{ version }}
 
 source:
-  fn: ibis-framework-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/i/ibis-framework/ibis-framework-{{ version }}.tar.gz
-  md5: b452f718ab8c607b01405e8ee40abf86
+  git_rev: {{ "v" + version }}
+  git_url: https://github.com/ibis-project/ibis
 
 build:
-  number: 1
+  number: 0
   script: python setup.py install --single-version-externally-managed --record record.txt
 
 requirements:
   build:
     - enum34  # [py27]
-    - graphviz
-    - impyla >=0.14.0
+    - funcsigs  # [py27]
+    - functools32  # [py27]
     - multipledispatch
     - numpy >=1.10.0
     - pandas >=0.18.1
-    - psycopg2
     - python
-    - python-graphviz
-    - python-hdfs >=2.0.0  # [not py36]
+    - regex
     - setuptools
     - six
-    - sqlalchemy >=1.0.0
-    - thrift  # [py36]
-    - thrift <=0.9.3  # [not py36]
-    - thriftpy <=0.3.9
     - toolz
 
   run:
+    - clickhouse-driver >=0.0.8
     - enum34  # [py27]
+    - funcsigs  # [py27]
+    - functools32  # [py27]
+    - google-cloud-bigquery <0.28
     - graphviz
     - impyla >=0.14.0
     - multipledispatch
     - numpy >=1.10.0
     - pandas >=0.18.1
+    - pathlib2  # [py27]
     - psycopg2
+    - pyarrow >=0.6.0  # [unix or (win64 and (py35 or py36))]
+    - pymysql
+    - pytables >=3.0.0
     - python
     - python-graphviz
-    - python-hdfs >=2.0.0  # [not py36]
+    - python-hdfs >=2.0.16
+    - regex
     - setuptools
     - six
-    - sqlalchemy >=1.0.0
-    - thrift  # [py36]
-    - thrift <=0.9.3  # [not py36]
-    - thriftpy <=0.3.9
+    - sqlalchemy >=1.0.0,<1.1.15
+    - thrift <=0.9.3  # [py27]
+    - thriftpy <=0.3.9  # [py27]
     - toolz
 
 test:
