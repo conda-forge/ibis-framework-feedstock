@@ -10,7 +10,7 @@ package:
 source:
   fn: {{ fn }}
   url: https://github.com/ibis-project/ibis/archive/{{ fn }}
-  md5: d41d8cd98f00b204e9800998ecf8427e
+  md5: b9cb4bae5ddf9d6cd537504f3e3d3d7c
 
 build:
   number: 1
