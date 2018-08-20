@@ -1,4 +1,4 @@
-{% set version = "0.13.0" %}
+{% set version = "0.14.0" %}
 {% set tag = "v" + version %}
 {% set extension = "tar.gz" %}
 {% set fn = tag + "." + extension %}
@@ -10,10 +10,10 @@ package:
 source:
   fn: {{ fn }}
   url: https://github.com/ibis-project/ibis/archive/{{ fn }}
-  sha256: 3da1b51c72e074183abb08a2724a5b77f90e7328ab014de5ff7e699daf5c75f9
+  sha256: 8ff1f33b890b88fa116ee55017165c5a5e109e51750d92c2af1a960df51cf80e
 
 build:
-  number: 3
+  number: 0
   script: python setup.py install --single-version-externally-managed --record record.txt
 
 requirements:
@@ -22,8 +22,8 @@ requirements:
     - funcsigs  # [py27]
     - functools32  # [py27]
     - multipledispatch
-    - numpy >=1.10.0
-    - pandas >=0.18.1
+    - numpy >=1.11
+    - pandas >=0.20
     - python
     - regex
     - setuptools
@@ -35,15 +35,17 @@ requirements:
     - enum34  # [py27]
     - funcsigs  # [py27]
     - functools32  # [py27]
-    - google-cloud-bigquery <0.28
+    - google-cloud-bigquery >=1.0.0
     - graphviz
     - impyla >=0.14.0
+    - lz4
     - multipledispatch
-    - numpy >=1.10.0
-    - pandas >=0.18.1
+    - numpy >=1.11
+    - pandas >=0.20
     - pathlib2  # [py27]
     - psycopg2
     - pyarrow >=0.6.0  # [unix or (win64 and (py35 or py36))]
+    - pymapd >=0.3.2
     - pymysql
     - pytables >=3.0.0
     - python
@@ -52,8 +54,8 @@ requirements:
     - regex
     - setuptools
     - six
-    - sqlalchemy >=1.0.0,<1.1.15
-    - thrift 0.9.3  # [py27]
+    - sqlalchemy
+    - thrift <=0.9.3  # [py27]
     - thriftpy <=0.3.9  # [py27]
     - toolz
 
@@ -63,15 +65,23 @@ test:
     - mock  # [py27]
   imports:
     - ibis
+    - ibis.bigquery
+    - ibis.bigquery.tests
     - ibis.expr
     - ibis.expr.tests
     - ibis.hive
     - ibis.hive.tests
     - ibis.impala  # [linux]
     - ibis.impala.tests  # [linux]
+    - ibis.mapd  # [unix and not py27]
+    - ibis.mapd.tests  # [unix and not py27]
+    - ibis.pandas
+    - ibis.pandas.tests
     - ibis.spark
     - ibis.spark.tests
     - ibis.sql
+    - ibis.sql.postgres
+    - ibis.sql.postgres.tests
     - ibis.sql.presto
     - ibis.sql.presto.tests
     - ibis.sql.redshift
