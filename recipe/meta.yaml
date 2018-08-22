@@ -14,21 +14,13 @@ source:
 
 build:
   number: 0
-  script: python setup.py install --single-version-externally-managed --record record.txt
+  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
 
 requirements:
-  build:
-    - enum34  # [py27]
-    - funcsigs  # [py27]
-    - functools32  # [py27]
-    - multipledispatch
-    - numpy >=1.11
-    - pandas >=0.20
+  host:
+    - pip
     - python
-    - regex
     - setuptools
-    - six
-    - toolz
 
   run:
     - clickhouse-driver >=0.0.8
