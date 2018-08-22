@@ -1,4 +1,4 @@
-{% set version = "0.13.0" %}
+{% set version = "0.14.0" %}
 {% set tag = "v" + version %}
 {% set extension = "tar.gz" %}
 {% set fn = tag + "." + extension %}
@@ -10,10 +10,10 @@ package:
 source:
   fn: {{ fn }}
   url: https://github.com/ibis-project/ibis/archive/{{ fn }}
-  sha256: 3da1b51c72e074183abb08a2724a5b77f90e7328ab014de5ff7e699daf5c75f9
+  sha256: 8ff1f33b890b88fa116ee55017165c5a5e109e51750d92c2af1a960df51cf80e
 
 build:
-  number: 3
+  number: 0
   script: python setup.py install --single-version-externally-managed --record record.txt
 
 requirements:
