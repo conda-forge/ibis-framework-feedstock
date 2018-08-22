@@ -37,7 +37,7 @@ requirements:
     - pathlib2  # [py27]
     - psycopg2
     - pyarrow >=0.6.0  # [unix or (win64 and (py35 or py36))]
-    - pymapd >=0.3.2
+    - pymapd >=0.3.2  # [not py27]
     - pymysql
     - pytables >=3.0.0
     - python
