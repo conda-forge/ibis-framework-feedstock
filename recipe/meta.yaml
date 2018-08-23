@@ -65,8 +65,8 @@ test:
     - ibis.hive.tests
     - ibis.impala  # [linux]
     - ibis.impala.tests  # [linux]
-    - ibis.mapd  # [unix and not py27]
-    - ibis.mapd.tests  # [unix and not py27]
+    - ibis.mapd  # [not py27]
+    - ibis.mapd.tests  # [not py27]
     - ibis.pandas
     - ibis.pandas.tests
     - ibis.spark
