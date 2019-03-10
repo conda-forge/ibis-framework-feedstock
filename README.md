@@ -114,6 +114,7 @@ Feedstock Maintainers
 =====================
 
 * [@cpcloud](https://github.com/cpcloud/)
+* [@kszucs](https://github.com/kszucs/)
 * [@mariusvniekerk](https://github.com/mariusvniekerk/)
 * [@wesm](https://github.com/wesm/)
 * [@xmnlab](https://github.com/xmnlab/)
