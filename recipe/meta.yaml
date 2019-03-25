@@ -9,10 +9,8 @@ package:
 
 source:
   fn: {{ fn }}
-  # url: https://github.com/ibis-project/ibis/archive/{{ fn }}
-  # sha256: b2ea73073ecfa4d3f371ac73ff01a0d0e1cdb80f7123bf82abdf8fc0bf2315bf
-  url: https://github.com/ibis-project/ibis/archive/a77308c981a75e9c24330d2a2766fa65c0d1d6e5.zip
-  sha256: 17c0a929f350efc7a81746abd9d71d8ea562f5ee3ad59495167389e55ba08b25
+  url: https://github.com/ibis-project/ibis/archive/{{ fn }}
+  sha256: 0f6514400ced9446baae0f69855b16c65219f7fdafadde12e660830f484500d8
 
 build:
   number: 0
