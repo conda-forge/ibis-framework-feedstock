@@ -1,15 +1,11 @@
 {% set version = "1.0.0" %}
-{% set tag = "v" + version %}
-{% set extension = "tar.gz" %}
-{% set fn = tag + "." + extension %}
 
 package:
   name: ibis-framework
   version: {{ version }}
 
 source:
-  fn: {{ fn }}
-  url: https://github.com/ibis-project/ibis/archive/{{ fn }}
+  url: https://github.com/ibis-project/ibis/archive/{{ version }}.tar.gz
   sha256: 0f6514400ced9446baae0f69855b16c65219f7fdafadde12e660830f484500d8
 
 build:
