@@ -36,7 +36,7 @@ requirements:
     - pandas >=0.20
     - psycopg2
     - pyarrow >=0.12
-    - pymapd >=0.8
+    - pymapd >=0.8.3
     - pymysql
     - pytables >=3.0.0
     - python >=3
