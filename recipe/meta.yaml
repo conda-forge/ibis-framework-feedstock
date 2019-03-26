@@ -6,10 +6,10 @@ package:
 
 source:
   url: https://github.com/ibis-project/ibis/archive/{{ version }}.tar.gz
-  sha256: 5fd4652583e618daaff7c2f403ef6e8cd5fbde04b9d8d00d99e88e4c8a14c4e1
+  sha256: af865e07a1917a7d98724826d7f36e76ad05c0af19b86eff955fc55696af67bb
 
 build:
-  number: 0
+  number: 1
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
   noarch: python
 
@@ -25,9 +25,9 @@ requirements:
     - graphviz
     - impyla >=0.14.2
     - lz4
-    - multipledispatch>=0.6
+    - multipledispatch >=0.6
     - numpy >=1.11
-    - pandas >=0.20
+    - pandas >=0.21
     - psycopg2
     - pyarrow >=0.12
     - pymapd >=0.8.3
