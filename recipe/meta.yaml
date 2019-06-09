@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/ibis-project/ibis/archive/{{ version }}.tar.gz
-  sha256: af865e07a1917a7d98724826d7f36e76ad05c0af19b86eff955fc55696af67bb
+  sha256: edcc3acaed75441f0dc8d59fb4e02415fa00b725adbc92408902a16809bf62a2
 
 build:
   number: 0
@@ -49,6 +49,9 @@ requirements:
 test:
   requires:
     - pytest >=4
+  source_files:
+    - ibis
+    - conftest.py
   imports:
     - ibis
     - ibis.bigquery
@@ -78,6 +81,8 @@ test:
     - ibis.sql.vertica
     - ibis.sql.vertica.tests
     - ibis.tests
+  commands:
+    - pytest --rootdir ibis -m 'not (backend or bigquery or clickhouse or hdfs or impala or kudu or mapd or mysql or postgresql or superuser or udf)' -k 'not test_import_time' --tb=line
 
 about:
   license: Apache 2.0
