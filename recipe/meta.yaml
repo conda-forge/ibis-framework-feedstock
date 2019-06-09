@@ -1,4 +1,4 @@
-{% set version = "1.0.0" %}
+{% set version = "1.1.0" %}
 
 package:
   name: ibis-framework
@@ -9,7 +9,7 @@ source:
   sha256: af865e07a1917a7d98724826d7f36e76ad05c0af19b86eff955fc55696af67bb
 
 build:
-  number: 1
+  number: 0
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
   noarch: python
 
@@ -23,30 +23,32 @@ requirements:
     - clickhouse-driver >=0.0.8
     - google-cloud-bigquery >=1.0.0
     - graphviz
-    - impyla >=0.14.2
+    - impyla >=0.15.0
     - lz4
     - multipledispatch >=0.6
     - numpy >=1.11
     - pandas >=0.21
     - psycopg2
     - pyarrow >=0.12
-    - pymapd >=0.8.3
+    - pydata-google-auth
+    - pymapd >=0.12.0
     - pymysql
     - pytables >=3.0.0
     - python >=3
     - python-graphviz
     - python-hdfs >=2.0.16
+    - pytz
     - regex
+    - requests
     - setuptools
-    - six
-    - sqlalchemy
-    - thrift
-    - thriftpy
+    - sqlalchemy >=1.1
+    - thrift >=0.9.3
+    - thriftpy2
     - toolz
 
 test:
   requires:
-    - pytest >=3
+    - pytest >=4
   imports:
     - ibis
     - ibis.bigquery
