@@ -1,4 +1,4 @@
-{% set version = "1.0.0" %}
+{% set version = "1.1.0" %}
 
 package:
   name: ibis-framework
@@ -6,10 +6,10 @@ package:
 
 source:
   url: https://github.com/ibis-project/ibis/archive/{{ version }}.tar.gz
-  sha256: af865e07a1917a7d98724826d7f36e76ad05c0af19b86eff955fc55696af67bb
+  sha256: edcc3acaed75441f0dc8d59fb4e02415fa00b725adbc92408902a16809bf62a2
 
 build:
-  number: 1
+  number: 0
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
   noarch: python
 
