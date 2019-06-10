@@ -52,6 +52,7 @@ test:
   source_files:
     - ibis
     - conftest.py
+    - setup.cfg
   imports:
     - ibis
     - ibis.bigquery
