@@ -83,7 +83,7 @@ test:
     - ibis.sql.vertica.tests
     - ibis.tests
   commands:
-    - pytest --rootdir ibis -m 'not (backend or bigquery or clickhouse or hdfs or impala or kudu or mapd or mysql or postgresql or superuser or udf)' --ignore ibis/tests/test_version.py --tb=line
+    - pytest --rootdir ibis -m "not (backend or bigquery or clickhouse or hdfs or impala or kudu or mapd or mysql or postgresql or superuser or udf)" --ignore ibis/tests/test_version.py --tb=line
 
 about:
   license: Apache 2.0
