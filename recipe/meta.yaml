@@ -1,4 +1,4 @@
-{% set version = "1.1.0" %}
+{% set version = "1.2.0" %}
 
 package:
   name: ibis-framework
@@ -6,10 +6,10 @@ package:
 
 source:
   url: https://github.com/ibis-project/ibis/archive/{{ version }}.tar.gz
-  sha256: 9498be1b15f7aad1e681d5dbb1a7df0ae67f4a228384f26e0041700c38646dc2
+  sha256: e97e82ed154dc9948f631c0f9efbdc7d786d6c254f0831dbb6e2ce69d4701f8c
 
 build:
-  number: 3
+  number: 0
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
   noarch: python
 
@@ -48,7 +48,7 @@ requirements:
 
 test:
   requires:
-    - pytest >=4
+    - pytest >=4.5
   source_files:
     - ibis
     - conftest.py
@@ -83,7 +83,7 @@ test:
     - ibis.sql.vertica.tests
     - ibis.tests
   commands:
-    - pytest --rootdir ibis -m "not (backend or bigquery or clickhouse or hdfs or impala or kudu or mapd or mysql or postgresql or superuser or udf)" --ignore ibis/tests/test_version.py --tb=line
+    - pytest --rootdir ibis -m "not (backend or bigquery or clickhouse or hdfs or impala or kudu or mapd or mysql or postgresql or superuser or udf or postgis)" --ignore ibis/tests/test_version.py --tb=line
 
 about:
   license: Apache 2.0
