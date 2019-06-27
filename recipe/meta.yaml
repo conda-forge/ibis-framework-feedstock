@@ -53,29 +53,6 @@ test:
     - ibis
     - conftest.py
     - setup.cfg
-  imports:
-    - ibis
-    - ibis.bigquery
-    - ibis.bigquery.tests
-    - ibis.clickhouse
-    - ibis.clickhouse.tests
-    - ibis.expr
-    - ibis.expr.tests
-    - ibis.impala  # [linux]
-    - ibis.impala.tests  # [linux]
-    - ibis.mapd
-    - ibis.mapd.tests
-    - ibis.mysql
-    - ibis.mysql.tests
-    - ibis.pandas
-    - ibis.pandas.tests
-    - ibis.postgres
-    - ibis.postgres.tests
-    - ibis.sql
-    - ibis.sqlite
-    - ibis.sqlite.tests
-    - ibis.sql.tests
-    - ibis.tests
   commands:
     - pytest --rootdir ibis -m "not (backend or bigquery or clickhouse or hdfs or impala or kudu or mapd or mysql or postgresql or superuser or udf or postgis)" --ignore ibis/tests/test_version.py --tb=line
 
