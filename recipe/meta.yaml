@@ -21,6 +21,8 @@ requirements:
 
   run:
     - clickhouse-driver >=0.0.8
+    - geoalchemy2
+    - geopandas
     - google-cloud-bigquery >=1.0.0
     - graphviz
     - impyla >=0.15.0
