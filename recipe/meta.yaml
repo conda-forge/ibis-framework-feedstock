@@ -9,7 +9,7 @@ source:
   sha256: 9def01ba183ec235a28ff404d3065d9eb214f81dd5dd9f3fed458e94e7e16271
 
 build:
-  number: 1
+  number: 2
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
   noarch: python
 
@@ -41,6 +41,7 @@ requirements:
     - regex
     - requests
     - setuptools
+    - shapely
     - sqlalchemy >=1.1
     - thrift >=0.9.3
     - thriftpy2
