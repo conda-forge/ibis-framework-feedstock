@@ -35,6 +35,7 @@ requirements:
     - pydata-google-auth
     - pymapd >=0.12.0
     - pymysql
+    - pyspark >=2.4.3
     - pytables >=3.0.0
     - python >=3
     - python-graphviz
@@ -57,7 +58,7 @@ test:
     - conftest.py
     - setup.cfg
   commands:
-    - pytest --rootdir ibis -m "not (backend or bigquery or clickhouse or hdfs or impala or kudu or mapd or mysql or postgresql or superuser or udf or postgis)" --ignore ibis/tests/test_version.py --tb=line
+    - pytest --rootdir ibis -m "not (backend or bigquery or clickhouse or hdfs or impala or kudu or mapd or mysql or postgresql or superuser or udf or postgis or spark)" --ignore ibis/tests/test_version.py --tb=line
 
 about:
   license: Apache 2.0
