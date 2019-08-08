@@ -9,7 +9,7 @@ source:
   sha256: 9def01ba183ec235a28ff404d3065d9eb214f81dd5dd9f3fed458e94e7e16271
 
 build:
-  number: 1
+  number: 2
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
   noarch: python
 
@@ -27,7 +27,7 @@ requirements:
     - lz4
     - multipledispatch >=0.6
     - numpy >=1.11
-    - pandas >=0.21
+    - pandas >=0.21,<0.25
     - psycopg2
     - pyarrow >=0.12
     - pydata-google-auth
