@@ -53,12 +53,6 @@ requirements:
     - toolz
 
 test:
-  requires:
-    - pytest >=4.5,<5.0.0
-  source_files:
-    - ibis
-    - conftest.py
-    - setup.cfg
   imports:
     - ibis
     - ibis.bigquery
@@ -67,10 +61,10 @@ test:
     - ibis.file.parquet
     - ibis.file.hdf5
     - ibis.impala
-    - ibis.mysql
+    - ibis.sql.mysql
     - ibis.omniscidb
     - ibis.pandas
-    - ibis.postgres
+    - ibis.sql.postgres
     - ibis.pyspark
     - ibis.spark
     - ibis.sql.sqlite
