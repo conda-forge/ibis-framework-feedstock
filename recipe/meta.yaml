@@ -1,4 +1,4 @@
-{% set version = "1.2.0" %}
+{% set version = "1.3.0" %}
 
 package:
   name: ibis-framework
@@ -6,11 +6,11 @@ package:
 
 source:
   url: https://github.com/ibis-project/ibis/archive/{{ version }}.tar.gz
-  sha256: 9def01ba183ec235a28ff404d3065d9eb214f81dd5dd9f3fed458e94e7e16271
+  sha256: 33ba671fa85accebbe7ab91a2f4eb575b485ae39396e3273dfbeaef35df948dc
 
 build:
-  number: 3
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+  number: 0
+  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
   noarch: python
 
 requirements:
@@ -20,16 +20,16 @@ requirements:
     - setuptools
 
   run:
-    - clickhouse-driver >=0.0.8
+    - clickhouse-driver >=0.0.13
     - google-cloud-bigquery >=1.0.0
     - graphviz
     - impyla >=0.15.0
     - lz4
     - multipledispatch >=0.6
     - numpy >=1.11
-    - pandas >=0.21,<0.25
+    - pandas >=0.25
     - psycopg2
-    - pyarrow >=0.12
+    - pyarrow >=0.13
     - pydata-google-auth
     - pymapd >=0.12.0
     - pymysql
@@ -54,14 +54,15 @@ test:
     - conftest.py
     - setup.cfg
   commands:
-    - pytest --rootdir ibis -o xfail_strict=False -m "not (backend or bigquery or clickhouse or hdfs or impala or kudu or mapd or mysql or postgresql or superuser or udf or postgis)" --ignore ibis/tests/test_version.py --tb=line
+    - pytest --rootdir ibis -o xfail_strict=False -m "not (backend or bigquery or clickhouse or hdfs or impala or kudu or omniscidb or mysql or postgresql or superuser
+      or udf or postgis)" --ignore ibis/tests/test_version.py --tb=line
 
 about:
   license: Apache-2.0
   license_family: Apache
   license_file: LICENSE.txt
   home: http://www.ibis-project.org
-  summary: 'Productivity-centric Python Big Data Framework'
+  summary: Productivity-centric Python Big Data Framework
 
 extra:
   recipe-maintainers:
