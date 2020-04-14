@@ -40,7 +40,7 @@ requirements:
     - pymysql
     - pyspark >=2.4.3  # [not py38]
     - pytables >=3.0.0
-    - python >=3
+    - python
     - python-graphviz
     - python-hdfs >=2.0.16
     - pytz
