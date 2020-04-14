@@ -22,7 +22,7 @@ requirements:
 
   run:
     - clickhouse-driver >=0.1.3
-    - clickhouse-cityhash
+    - clickhouse-cityhash  # [not win]
     - clickhouse-sqlalchemy
     - geoalchemy2
     - geopandas
