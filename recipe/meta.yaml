@@ -9,7 +9,7 @@ source:
   sha256: 36e0b2694a4e88a1406756eb32b21df7a625009f83bdfed012ab0159c7b49117
 
 build:
-  number: 2
+  number: 3
   script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
   # uncomment noarch when pymapd and pyspark issues are fixed for py38
   # noarch: python
