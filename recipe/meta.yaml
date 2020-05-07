@@ -31,12 +31,12 @@ requirements:
     - impyla >=0.15.0
     - lz4
     - multipledispatch >=0.6
-    - numpy >=1.11
-    - pandas >=0.25
+    - numpy >=1.15
+    - pandas >=0.25.3
     - psycopg2
-    - pyarrow >=0.13
+    - pyarrow >=0.15
     - pydata-google-auth
-    - pymapd >=0.12.0  # [not py38]
+    - pymapd >=0.22.0
     - pymysql
     - pyspark >=2.4.3  # [not py38]
     - pytables >=3.0.0
@@ -49,7 +49,7 @@ requirements:
     - shapely
     - setuptools
     - sqlalchemy >=1.1
-    - thrift >=0.9.3
+    - thrift >=0.11
     - thriftpy2
     - toolz
 
