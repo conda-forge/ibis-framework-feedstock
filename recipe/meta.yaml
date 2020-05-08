@@ -9,7 +9,7 @@ source:
   sha256: 36e0b2694a4e88a1406756eb32b21df7a625009f83bdfed012ab0159c7b49117
 
 build:
-  number: 3
+  number: 4
   script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
   # uncomment noarch when pymapd and pyspark issues are fixed for py38
   # noarch: python
@@ -36,9 +36,9 @@ requirements:
     - psycopg2
     - pyarrow >=0.15
     - pydata-google-auth
-    - pymapd >=0.22.0
+    - pymapd >=0.22.0  # [py<38]
     - pymysql
-    - pyspark >=2.4.3  # [not py38]
+    - pyspark >=2.4.3  # [py<38]
     - pytables >=3.0.0
     - python
     - python-graphviz
@@ -63,10 +63,10 @@ test:
     - ibis.file.hdf5
     - ibis.impala
     - ibis.sql.mysql
-    - ibis.omniscidb
+    - ibis.omniscidb  # [py<38]
     - ibis.pandas
     - ibis.sql.postgres
-    - ibis.pyspark  # [not py38]
+    - ibis.pyspark  # [py<38]
     - ibis.spark
     - ibis.sql.sqlite
 
