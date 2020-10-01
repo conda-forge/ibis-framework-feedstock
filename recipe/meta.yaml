@@ -9,7 +9,7 @@ source:
   sha256: 36e0b2694a4e88a1406756eb32b21df7a625009f83bdfed012ab0159c7b49117
 
 build:
-  number: 6
+  number: 7
   script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
   # uncomment noarch when pymapd and pyspark issues are fixed for py38
   # noarch: python
@@ -26,15 +26,14 @@ requirements:
     - clickhouse-sqlalchemy
     - geoalchemy2
     - geopandas
-    # see https://github.com/googleapis/python-api-core/issues/47
-    - google-api-core =1.17.0
-    - google-cloud-bigquery >=1.0.0
+    - google-cloud-bigquery >=1.12.0,<2.0.0dev
     - graphviz
     - impyla >=0.15.0
     - lz4
     - multipledispatch >=0.6
     - numpy >=1.15
     - pandas >=0.25.3
+    - protobuf>=3.12.0
     - psycopg2
     - pyarrow >=0.15
     - pydata-google-auth
