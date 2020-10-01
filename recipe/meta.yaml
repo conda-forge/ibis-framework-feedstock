@@ -26,7 +26,7 @@ requirements:
     - clickhouse-sqlalchemy
     - geoalchemy2
     - geopandas
-    - google-cloud-bigquery >=1.12.0,<2.0.0dev
+    - google-cloud-bigquery-core >=1.12.0,<2.0.0dev
     - graphviz
     - impyla >=0.15.0
     - lz4
