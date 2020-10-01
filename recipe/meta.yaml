@@ -63,7 +63,7 @@ test:
     - ibis.file.hdf5
     - ibis.impala
     - ibis.sql.mysql
-    - ibis.backends.omniscidb  # [py<38]
+    - ibis.omniscidb  # [py<38]
     - ibis.pandas
     - ibis.sql.postgres
     - ibis.pyspark  # [py<38]
