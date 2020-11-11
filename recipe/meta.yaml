@@ -1,4 +1,4 @@
-{% set version = "1.3.0" %}
+{% set version = "1.4.0" %}
 
 package:
   name: ibis-framework
@@ -6,10 +6,10 @@ package:
 
 source:
   url: https://github.com/ibis-project/ibis/archive/{{ version }}.tar.gz
-  sha256: 36e0b2694a4e88a1406756eb32b21df7a625009f83bdfed012ab0159c7b49117
+  sha256: dd3e3d6d495d4ed4f7e5b8ec523949bc54f6fc89f31ca60ef3dc103de8d37635
 
 build:
-  number: 7
+  number: 0
   script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
   # uncomment noarch when pymapd and pyspark issues are fixed for py38
   # noarch: python
