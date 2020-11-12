@@ -11,8 +11,7 @@ source:
 build:
   number: 0
   script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
-  # uncomment noarch when pymapd and pyspark issues are fixed for py38
-  # noarch: python
+  noarch: python
 
 requirements:
   host:
