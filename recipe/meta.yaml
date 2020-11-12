@@ -11,7 +11,6 @@ source:
 build:
   number: 0
   script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
-  noarch: python
 
 requirements:
   host:
@@ -37,7 +36,7 @@ requirements:
     - pydata-google-auth
     - pymapd 0.24  # [py<38]
     - pymysql
-    - pyspark >=2.4.3  # [py<38]
+    - pyspark >=2.4.3
     - pytables >=3.0.0
     - python
     - python-graphviz
@@ -65,7 +64,7 @@ test:
     - ibis.backends.omniscidb  # [py<38]
     - ibis.backends.pandas
     - ibis.backends.postgres
-    - ibis.backends.pyspark  # [py<38]
+    - ibis.backends.pyspark
     - ibis.backends.spark
     - ibis.backends.sqlite
 
