@@ -16,7 +16,7 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.7
+    - python
     - setuptools
 
   run:
@@ -39,7 +39,7 @@ requirements:
     - pymysql
     - pyspark >=2.4.3
     - pytables >=3.0.0
-    - python >=3.7
+    - python
     - python-graphviz
     - python-hdfs >=2.0.16
     - pytz
@@ -78,9 +78,6 @@ about:
 
 extra:
   recipe-maintainers:
-    - cpcloud
-    - mariusvniekerk
-    - wesm
-    - kszucs
-    - xmnlab
     - jreback
+    - xmnlab
+    - datapythonista
