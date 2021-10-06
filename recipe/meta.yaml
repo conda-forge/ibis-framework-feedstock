@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/ibis-project/ibis/archive/{{ version }}.tar.gz
-  sha256: 1c2266429123c9730307d75e1c2a778e4b9193c8c6d183a12b74c556a8ef9e3f
+  sha256: 36f99ad2a1dcd655d4e02557de01dd81055ea83fb9f3ed26954e4aec6b23ba78
 
 build:
   number: 0
