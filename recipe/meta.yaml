@@ -1,4 +1,4 @@
-{% set version = "1.4.0" %}
+{% set version = "2.0.0" %}
 
 package:
   name: ibis-framework
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/ibis-project/ibis/archive/{{ version }}.tar.gz
-  sha256: dd3e3d6d495d4ed4f7e5b8ec523949bc54f6fc89f31ca60ef3dc103de8d37635
+  sha256: 36f99ad2a1dcd655d4e02557de01dd81055ea83fb9f3ed26954e4aec6b23ba78
 
 build:
   number: 0
