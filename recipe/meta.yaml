@@ -102,12 +102,12 @@ outputs:
         - ibis
         - ibis.backends.pandas
 
-  about:
-    license: Apache-2.0
-    license_family: Apache
-    license_file: LICENSE.txt
-    home: http://www.ibis-project.org
-    summary: Productivity-centric Python Big Data Framework
+about:
+  license: Apache-2.0
+  license_family: Apache
+  license_file: LICENSE.txt
+  home: http://www.ibis-project.org
+  summary: Productivity-centric Python Big Data Framework
 
 extra:
   recipe-maintainers:
