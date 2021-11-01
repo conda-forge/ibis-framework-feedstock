@@ -1,5 +1,4 @@
 {% set version = "2.0.0" %}
-{% set build_number = "1" %}
 
 package:
   name: ibis-framework-ext
@@ -9,6 +8,8 @@ source:
   url: https://github.com/ibis-project/ibis/archive/{{ version }}.tar.gz
   sha256: e55178269266c8cd29b68bb5699fdeb251bcf9fdd4957e70a1f9916fd8ab4c18
 
+build:
+  number: 1
 
 outputs:
 
@@ -16,7 +17,6 @@ outputs:
     version: {{ version }}
 
     build:
-      number: {{ build_number }}
       script: python -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
       skip: true  # [py<37]
 
@@ -72,18 +72,10 @@ outputs:
         - ibis.backends.pyspark
         - ibis.backends.sqlite
 
-    about:
-      license: Apache-2.0
-      license_family: Apache
-      license_file: LICENSE.txt
-      home: http://www.ibis-project.org
-      summary: Productivity-centric Python Big Data Framework
-
   - name: ibis-framework-core
     version: {{ version }}
 
     build:
-      number: {{ build_number }}
       script: python -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
       skip: true  # [py<37]
 
@@ -110,12 +102,12 @@ outputs:
         - ibis
         - ibis.backends.pandas
 
-    about:
-      license: Apache-2.0
-      license_family: Apache
-      license_file: LICENSE.txt
-      home: http://www.ibis-project.org
-      summary: Productivity-centric Python Big Data Framework (Core)
+  about:
+    license: Apache-2.0
+    license_family: Apache
+    license_file: LICENSE.txt
+    home: http://www.ibis-project.org
+    summary: Productivity-centric Python Big Data Framework
 
 extra:
   recipe-maintainers:
