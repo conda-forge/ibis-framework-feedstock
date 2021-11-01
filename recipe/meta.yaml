@@ -10,6 +10,7 @@ source:
 
 build:
   number: 1
+  noarch: python
 
 outputs:
 
@@ -18,12 +19,11 @@ outputs:
 
     build:
       script: python -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
-      skip: true  # [py<37]
 
     requirements:
       host:
         - pip
-        - python
+        - python >=3.7
         - setuptools
     
       run:
@@ -45,7 +45,7 @@ outputs:
         - pymysql
         - pyspark >=2.4.3
         - pytables >=3.0.0
-        - python
+        - python >=3.7
         - python-graphviz
         - python-hdfs >=2.0.16
         - pytz
@@ -77,18 +77,18 @@ outputs:
 
     build:
       script: python -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
-      skip: true  # [py<37]
 
     requirements:
       host:
         - pip
-        - python
+        - python >=3.7
         - setuptools
 
       run:
         - multipledispatch >=0.6.0
         - numpy >=1.11
         - pandas >=0.21
+        - python >=3.7
         - pytz
         - regex
         - toolz
