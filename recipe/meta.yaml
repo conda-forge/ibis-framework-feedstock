@@ -1,4 +1,5 @@
 {% set version = "2.0.0" %}
+{% set build_number = "1" %}
 
 package:
   name: ibis-framework-ext
@@ -15,7 +16,7 @@ outputs:
     version: {{ version }}
 
     build:
-      number: 1
+      number: {{ build_number }}
       script: python -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
       skip: true  # [py<37]
 
@@ -82,7 +83,7 @@ outputs:
     version: {{ version }}
 
     build:
-      number: 1
+      number: {{ build_number }}
       script: python -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
       skip: true  # [py<37]
 
