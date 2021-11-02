@@ -13,65 +13,6 @@ build:
 
 outputs:
 
-  - name: ibis-framework
-    version: {{ version }}
-
-    build:
-      script: python -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
-      skip: true  # [py<37]
-
-    requirements:
-      host:
-        - pip
-        - python
-        - setuptools
-    
-      run:
-        - cached_property
-        - clickhouse-driver >=0.1.3
-        - clickhouse-cityhash  # [not win]
-        - clickhouse-sqlalchemy
-        - geoalchemy2
-        - geopandas
-        - graphviz
-        - impyla >=0.15.0
-        - lz4
-        - multipledispatch >=0.6
-        - numpy >=1.15
-        - pandas >=0.25.3
-        - parsy
-        - psycopg2
-        - pyarrow >=0.15
-        - pymysql
-        - pyspark >=2.4.3
-        - pytables >=3.0.0
-        - python
-        - python-graphviz
-        - python-hdfs >=2.0.16
-        - pytz
-        - regex
-        - requests
-        - shapely
-        - setuptools
-        - sqlalchemy >=1.1
-        - thrift >=0.11
-        - thriftpy2
-        - toolz
-    
-    test:
-      imports:
-        - ibis
-        - ibis.backends.clickhouse
-        - ibis.backends.csv
-        - ibis.backends.parquet
-        - ibis.backends.hdf5
-        - ibis.backends.impala
-        - ibis.backends.mysql
-        - ibis.backends.pandas
-        - ibis.backends.postgres
-        - ibis.backends.pyspark
-        - ibis.backends.sqlite
-
   - name: ibis-framework-core
     version: {{ version }}
 
@@ -102,6 +43,57 @@ outputs:
       imports:
         - ibis
         - ibis.backends.pandas
+
+
+  - name: ibis-framework
+    version: {{ version }}
+
+    build:
+      script: python -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
+      skip: true  # [py<37]
+
+    requirements:
+      host:
+        - pip
+        - python
+        - setuptools
+    
+      run:
+        - clickhouse-driver >=0.1.3
+        - clickhouse-cityhash  # [not win]
+        - clickhouse-sqlalchemy
+        - geoalchemy2
+        - geopandas
+        - impyla >=0.15.0
+        - lz4
+        - psycopg2
+        - pyarrow >=0.15
+        - pymysql
+        - pyspark >=2.4.3
+        - pytables >=3.0.0
+        - python
+        - python-graphviz
+        - python-hdfs >=2.0.16
+        - requests
+        - shapely
+        - sqlalchemy >=1.1
+        - thrift >=0.11
+        - thriftpy2
+        - {{ pin_subpackage('ibis-framework-core', max_pin="x.x.x.x") }}
+    
+    test:
+      imports:
+        - ibis
+        - ibis.backends.clickhouse
+        - ibis.backends.csv
+        - ibis.backends.parquet
+        - ibis.backends.hdf5
+        - ibis.backends.impala
+        - ibis.backends.mysql
+        - ibis.backends.pandas
+        - ibis.backends.postgres
+        - ibis.backends.pyspark
+        - ibis.backends.sqlite
 
 about:
   license: Apache-2.0
