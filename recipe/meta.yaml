@@ -78,7 +78,7 @@ outputs:
         - sqlalchemy >=1.1
         - thrift >=0.11
         - thriftpy2
-        - {{ pin_subpackage('{{ name }}-core', max_pin="x.x.x.x") }}
+        - {{ pin_subpackage(name + '-core', max_pin="x.x.x.x") }}
 
     test:
       imports:
