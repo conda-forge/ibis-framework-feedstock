@@ -9,7 +9,7 @@ source:
   sha256: 1c2266429123c9730307d75e1c2a778e4b9193c8c6d183a12b74c556a8ef9e3f
 
 build:
-  number: 2
+  number: 3
 
 outputs:
   - name: ibis-framework-core
