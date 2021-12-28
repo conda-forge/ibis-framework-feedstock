@@ -34,13 +34,6 @@ Current build status
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_python3.10.____cpython</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5299&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ibis-framework-feedstock?branchName=master&jobName=osx&configuration=osx_64_python3.10.____cpython" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
               <td>osx_64_python3.7.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5299&branchName=master">
@@ -192,6 +185,7 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
+* [@cpcloud](https://github.com/cpcloud/)
 * [@datapythonista](https://github.com/datapythonista/)
 * [@jreback](https://github.com/jreback/)
 * [@xmnlab](https://github.com/xmnlab/)
