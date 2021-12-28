@@ -5,14 +5,13 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/ibis-project/ibis/archive/{{ version }}.tar.gz
-  sha256: e55178269266c8cd29b68bb5699fdeb251bcf9fdd4957e70a1f9916fd8ab4c18
+  url: https://pypi.io/packages/source/i/ibis-framework/ibis-framework-2.0.0.tar.gz
+  sha256: 1c2266429123c9730307d75e1c2a778e4b9193c8c6d183a12b74c556a8ef9e3f
 
 build:
   number: 2
 
 outputs:
-
   - name: ibis-framework-core
     version: {{ version }}
 
@@ -44,7 +43,6 @@ outputs:
         - ibis
         - ibis.backends.pandas
 
-
   - name: ibis-framework
     version: {{ version }}
 
@@ -57,7 +55,7 @@ outputs:
         - pip
         - python
         - setuptools
-    
+
       run:
         - clickhouse-driver >=0.1.3
         - clickhouse-cityhash  # [not win]
@@ -80,7 +78,7 @@ outputs:
         - thrift >=0.11
         - thriftpy2
         - {{ pin_subpackage('ibis-framework-core', max_pin="x.x.x.x") }}
-    
+
     test:
       imports:
         - ibis
@@ -107,3 +105,4 @@ extra:
     - jreback
     - xmnlab
     - datapythonista
+    - cpcloud
