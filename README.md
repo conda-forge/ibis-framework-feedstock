@@ -192,6 +192,7 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
+* [@cpcloud](https://github.com/cpcloud/)
 * [@datapythonista](https://github.com/datapythonista/)
 * [@jreback](https://github.com/jreback/)
 * [@xmnlab](https://github.com/xmnlab/)
