@@ -10,7 +10,7 @@ source:
   sha256: 1c2266429123c9730307d75e1c2a778e4b9193c8c6d183a12b74c556a8ef9e3f
 
 build:
-  number: 4
+  number: 5
 
 outputs:
   - name: {{ name }}-core
@@ -194,6 +194,30 @@ outputs:
       imports:
         - ibis
         - ibis.backends.impala
+
+  - name: ibis-mysql
+    version: {{ version }}
+
+    build:
+      script: python -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
+      skip: true  # [py<37]
+
+    requirements:
+      host:
+        - pip
+        - python
+        - setuptools
+
+      run:
+        - pymysql
+        - sqlalchemy >=1.3
+        - python
+        - {{ pin_subpackage(name + '-core', max_pin="x.x.x.x") }}
+
+    test:
+      imports:
+        - ibis
+        - ibis.backends.mysql
 
   - name: ibis-parquet
     version: {{ version }}
