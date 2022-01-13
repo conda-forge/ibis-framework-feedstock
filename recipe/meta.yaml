@@ -1,5 +1,5 @@
 {% set name = "ibis-framework" %}
-{% set version = "2.0.0" %}
+{% set version = "2.1.1" %}
 
 package:
   name: {{ name }}-ext
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 1c2266429123c9730307d75e1c2a778e4b9193c8c6d183a12b74c556a8ef9e3f
+  sha256: 15dc0c5d8abc41a9bddc643b7b360a61195d0363c61e83d2c588c55ff3b5b236
 
 build:
-  number: 5
+  number: 0
 
 outputs:
   - name: {{ name }}-core
