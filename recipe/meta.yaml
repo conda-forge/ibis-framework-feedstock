@@ -18,11 +18,12 @@ outputs:
     version: {{ version }}
 
     build:
-      script: python -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
+      script: python -m pip install . --no-deps --ignore-installed --no-cache-dir -v
 
     requirements:
       host:
         - pip
+        - poetry
         - python
 
       run:
@@ -47,11 +48,12 @@ outputs:
     version: {{ version }}
 
     build:
-      script: python -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
+      script: python -m pip install . --no-deps --ignore-installed --no-cache-dir -v
 
     requirements:
       host:
         - pip
+        - poetry
         - python
 
       run:
@@ -95,11 +97,12 @@ outputs:
     version: {{ version }}
 
     build:
-      script: python -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
+      script: python -m pip install . --no-deps --ignore-installed --no-cache-dir -v
 
     requirements:
       host:
         - pip
+        - poetry
         - python
 
       run:
@@ -118,11 +121,12 @@ outputs:
     version: {{ version }}
 
     build:
-      script: python -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
+      script: python -m pip install . --no-deps --ignore-installed --no-cache-dir -v
 
     requirements:
       host:
         - pip
+        - poetry
         - python
 
       run:
@@ -140,11 +144,12 @@ outputs:
     version: {{ version }}
 
     build:
-      script: python -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
+      script: python -m pip install . --no-deps --ignore-installed --no-cache-dir -v
 
     requirements:
       host:
         - pip
+        - poetry
         - python
 
       run:
@@ -161,11 +166,12 @@ outputs:
     version: {{ version }}
 
     build:
-      script: python -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
+      script: python -m pip install . --no-deps --ignore-installed --no-cache-dir -v
 
     requirements:
       host:
         - pip
+        - poetry
         - python
 
       run:
@@ -185,11 +191,12 @@ outputs:
     version: {{ version }}
 
     build:
-      script: python -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
+      script: python -m pip install . --no-deps --ignore-installed --no-cache-dir -v
 
     requirements:
       host:
         - pip
+        - poetry
         - python
 
       run:
@@ -207,11 +214,12 @@ outputs:
     version: {{ version }}
 
     build:
-      script: python -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
+      script: python -m pip install . --no-deps --ignore-installed --no-cache-dir -v
 
     requirements:
       host:
         - pip
+        - poetry
         - python
 
       run:
@@ -228,11 +236,12 @@ outputs:
     version: {{ version }}
 
     build:
-      script: python -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
+      script: python -m pip install . --no-deps --ignore-installed --no-cache-dir -v
 
     requirements:
       host:
         - pip
+        - poetry
         - python
 
       run:
@@ -250,11 +259,12 @@ outputs:
     version: {{ version }}
 
     build:
-      script: python -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
+      script: python -m pip install . --no-deps --ignore-installed --no-cache-dir -v
 
     requirements:
       host:
         - pip
+        - poetry
         - python
 
       run:
@@ -272,11 +282,12 @@ outputs:
     version: {{ version }}
 
     build:
-      script: python -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
+      script: python -m pip install . --no-deps --ignore-installed --no-cache-dir -v
 
     requirements:
       host:
         - pip
+        - poetry
         - python
 
       run:
@@ -293,11 +304,12 @@ outputs:
     version: {{ version }}
 
     build:
-      script: python -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
+      script: python -m pip install . --no-deps --ignore-installed --no-cache-dir -v
 
     requirements:
       host:
         - pip
+        - poetry
         - python
 
       run:
