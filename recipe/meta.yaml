@@ -28,7 +28,7 @@ outputs:
       run:
         - atpublic >=2.3,<3
         - cached_property >=1,<2
-        - importlib-metadata >=4,<5 # [py<38]
+        - importlib-metadata >=4,<5  # [py<38]
         - multipledispatch >=0.6,<0.7
         - numpy >=1.15,<2
         - pandas >=1.2.5,<2
