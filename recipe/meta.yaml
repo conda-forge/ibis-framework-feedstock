@@ -33,6 +33,7 @@ outputs:
         - multipledispatch >=0.6
         - numpy >=1.15
         - pandas >=1.2.5
+        - poetry
         - python
         - regex >=2021.7.6
         - toolz >=0.11
