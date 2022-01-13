@@ -11,20 +11,26 @@ source:
 
 build:
   number: 0
-  noarch: python
+
+requirements:
+  host:
+    - python >=3.7
 
 outputs:
   - name: {{ name }}-core
     version: {{ version }}
 
     build:
-      script: python -m pip install . --no-deps --ignore-installed --no-cache-dir -v
+      script: pip install . --no-deps --ignore-installed --no-cache-dir -v
+      noarch: python
 
     requirements:
       host:
         - pip
         - poetry
-        - python
+        - poetry-core
+        - setuptools
+        - python >=3.7
 
       run:
         - atpublic >=2.3
@@ -33,8 +39,7 @@ outputs:
         - multipledispatch >=0.6
         - numpy >=1.15
         - pandas >=1.2.5
-        - poetry
-        - python
+        - python >=3.7
         - regex >=2021.7.6
         - toolz >=0.11
         - parsy >=1.3.0
@@ -49,14 +54,9 @@ outputs:
     version: {{ version }}
 
     build:
-      script: python -m pip install . --no-deps --ignore-installed --no-cache-dir -v
+      noarch: python
 
     requirements:
-      host:
-        - pip
-        - poetry
-        - python
-
       run:
         - atpublic >=2.3
         - clickhouse-driver >=0.1.3
@@ -70,7 +70,7 @@ outputs:
         - pymysql >=1
         - pyspark >=2.4.3
         - pytables >=3
-        - python
+        - python >=3.7
         - python-graphviz >=0.16
         - python-hdfs >=2.0.16
         - requests >=2
@@ -98,19 +98,14 @@ outputs:
     version: {{ version }}
 
     build:
-      script: python -m pip install . --no-deps --ignore-installed --no-cache-dir -v
+      noarch: python
 
     requirements:
-      host:
-        - pip
-        - poetry
-        - python
-
       run:
         - clickhouse-driver >=0.1.3
         - clickhouse-sqlalchemy >=0.1.4
         - sqlalchemy >=1.3
-        - python
+        - python >=3.7
         - {{ pin_subpackage(name + '-core', max_pin="x.x.x.x") }}
 
     test:
@@ -122,18 +117,13 @@ outputs:
     version: {{ version }}
 
     build:
-      script: python -m pip install . --no-deps --ignore-installed --no-cache-dir -v
+      noarch: python
 
     requirements:
-      host:
-        - pip
-        - poetry
-        - python
-
       run:
         - pyarrow >=1
         - dask >=2021.10.0
-        - python
+        - python >=3.7
         - {{ pin_subpackage(name + '-core', max_pin="x.x.x.x") }}
 
     test:
@@ -145,17 +135,12 @@ outputs:
     version: {{ version }}
 
     build:
-      script: python -m pip install . --no-deps --ignore-installed --no-cache-dir -v
+      noarch: python
 
     requirements:
-      host:
-        - pip
-        - poetry
-        - python
-
       run:
         - pytables >=3
-        - python
+        - python >=3.7
         - {{ pin_subpackage(name + '-core', max_pin="x.x.x.x") }}
 
     test:
@@ -167,20 +152,15 @@ outputs:
     version: {{ version }}
 
     build:
-      script: python -m pip install . --no-deps --ignore-installed --no-cache-dir -v
+      noarch: python
 
     requirements:
-      host:
-        - pip
-        - poetry
-        - python
-
       run:
         - impyla >=0.17
         - python-hdfs >=2.0.16
         - requests >=2
         - sqlalchemy >=1.3
-        - python
+        - python >=3.7
         - {{ pin_subpackage(name + '-core', max_pin="x.x.x.x") }}
 
     test:
@@ -192,18 +172,13 @@ outputs:
     version: {{ version }}
 
     build:
-      script: python -m pip install . --no-deps --ignore-installed --no-cache-dir -v
+      noarch: python
 
     requirements:
-      host:
-        - pip
-        - poetry
-        - python
-
       run:
         - pymysql >=1
         - sqlalchemy >=1.3
-        - python
+        - python >=3.7
         - {{ pin_subpackage(name + '-core', max_pin="x.x.x.x") }}
 
     test:
@@ -215,17 +190,12 @@ outputs:
     version: {{ version }}
 
     build:
-      script: python -m pip install . --no-deps --ignore-installed --no-cache-dir -v
+      noarch: python
 
     requirements:
-      host:
-        - pip
-        - poetry
-        - python
-
       run:
         - pyarrow >=1
-        - python
+        - python >=3.7
         - {{ pin_subpackage(name + '-core', max_pin="x.x.x.x") }}
 
     test:
@@ -237,18 +207,13 @@ outputs:
     version: {{ version }}
 
     build:
-      script: python -m pip install . --no-deps --ignore-installed --no-cache-dir -v
+      noarch: python
 
     requirements:
-      host:
-        - pip
-        - poetry
-        - python
-
       run:
         - sqlalchemy >=1.3
         - psycopg2 >=2.7
-        - python
+        - python >=3.7
         - {{ pin_subpackage(name + '-core', max_pin="x.x.x.x") }}
 
     test:
@@ -260,18 +225,13 @@ outputs:
     version: {{ version }}
 
     build:
-      script: python -m pip install . --no-deps --ignore-installed --no-cache-dir -v
+      noarch: python
 
     requirements:
-      host:
-        - pip
-        - poetry
-        - python
-
       run:
         - pyarrow >=1
         - pyspark >=2.4.3
-        - python
+        - python >=3.7
         - {{ pin_subpackage(name + '-core', max_pin="x.x.x.x") }}
 
     test:
@@ -283,17 +243,12 @@ outputs:
     version: {{ version }}
 
     build:
-      script: python -m pip install . --no-deps --ignore-installed --no-cache-dir -v
+      noarch: python
 
     requirements:
-      host:
-        - pip
-        - poetry
-        - python
-
       run:
         - sqlalchemy >=1.3
-        - python
+        - python >=3.7
         - {{ pin_subpackage(name + '-core', max_pin="x.x.x.x") }}
 
     test:
@@ -305,17 +260,12 @@ outputs:
     version: {{ version }}
 
     build:
-      script: python -m pip install . --no-deps --ignore-installed --no-cache-dir -v
+      noarch: python
 
     requirements:
-      host:
-        - pip
-        - poetry
-        - python
-
       run:
         - datafusion >=0.4
-        - python
+        - python >=3.7
         - {{ pin_subpackage(name + '-core', max_pin="x.x.x.x") }}
 
     test:
