@@ -21,14 +21,15 @@ outputs:
     version: {{ version }}
 
     build:
-      script: pip install . --no-deps --ignore-installed --no-cache-dir -v
       noarch: python
+      script:
+        # TODO: make this work without short-circuiting poetry
+        - rm pyproject.toml || del pyproject.toml
+        - python -m pip install . -vv --no-deps
 
     requirements:
       host:
         - pip
-        - poetry
-        - poetry-core
         - setuptools
         - python >=3.7
 
