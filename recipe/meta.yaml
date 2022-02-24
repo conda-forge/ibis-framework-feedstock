@@ -10,7 +10,7 @@ source:
   sha256: 15dc0c5d8abc41a9bddc643b7b360a61195d0363c61e83d2c588c55ff3b5b236
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   host:
@@ -60,39 +60,22 @@ outputs:
     requirements:
       run:
         - atpublic >=2.3
-        - clickhouse-driver >=0.1.3
-        - clickhouse-sqlalchemy >=0.1.4
+        - dask >=2021.10.0
         - datafusion >=0.4
-        - geoalchemy2 >=0.6
-        - geopandas >=0.6
-        - impyla >=0.17
-        - psycopg2 >=2.7
         - pyarrow >=1
-        - pymysql >=1
-        - pyspark >=2.4.3
-        - pytables >=3
         - python >=3.7
         - python-graphviz >=0.16
-        - python-hdfs >=2.0.16
         - requests >=2
-        - shapely >=1.6
         - sqlalchemy >=1.3
         - {{ pin_subpackage(name + '-core', max_pin="x.x.x.x") }}
 
     test:
       imports:
         - ibis
-        - ibis.backends.clickhouse
-        - ibis.backends.csv
-        - ibis.backends.parquet
-        - ibis.backends.hdf5
-        - ibis.backends.impala
-        - ibis.backends.mysql
-        - ibis.backends.pandas
-        - ibis.backends.postgres
-        - ibis.backends.pyspark
-        - ibis.backends.sqlite
+        - ibis.backends.dask
         - ibis.backends.datafusion
+        - ibis.backends.pandas
+        - ibis.backends.sqlite
 
 
   - name: ibis-clickhouse
