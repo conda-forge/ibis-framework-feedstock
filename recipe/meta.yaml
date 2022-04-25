@@ -1,5 +1,5 @@
 {% set name = "ibis-framework" %}
-{% set version = "2.1.1" %}
+{% set version = "3.0.0" %}
 
 package:
   name: {{ name }}-ext
@@ -7,14 +7,14 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 15dc0c5d8abc41a9bddc643b7b360a61195d0363c61e83d2c588c55ff3b5b236
+  sha256: 63c32b78e04d867c579163de9d690322cf4a53b94fdf09c5f4867dd8af894328
 
 build:
-  number: 1
+  number: 0
 
 requirements:
   host:
-    - python >=3.7
+    - python >=3.8
 
 outputs:
   - name: {{ name }}-core
@@ -31,7 +31,7 @@ outputs:
       host:
         - pip
         - setuptools
-        - python >=3.7
+        - python >=3.8
 
       run:
         - atpublic >=2.3
@@ -39,12 +39,16 @@ outputs:
         - importlib-metadata >=4
         - multipledispatch >=0.6
         - numpy >=1.15
+        - packaging >=21.3
         - pandas >=1.2.5
-        - python >=3.7
-        - regex >=2021.7.6
-        - toolz >=0.11
         - parsy >=1.3.0
+        - poetry-dynamic-versioning >=0.14.0
+        - pydantic >=1.9.0
+        - python >=3.8
         - python-graphviz >=0.16
+        - regex >=2021.7.6
+        - tabulate >=0.8.9
+        - toolz >=0.11
 
     test:
       imports:
@@ -62,18 +66,19 @@ outputs:
         - atpublic >=2.3
         - dask >=2021.10.0
         - datafusion >=0.4
+        - duckdb-engine
         - pyarrow >=1
-        - python >=3.7
+        - python-duckdb
         - python-graphviz >=0.16
-        - requests >=2
-        - sqlalchemy >=1.3
-        - {{ pin_subpackage(name + '-core', max_pin="x.x.x.x") }}
+        - sqlalchemy >=1.4
+        - {{ pin_subpackage(name + '-core') }}
 
     test:
       imports:
         - ibis
         - ibis.backends.dask
         - ibis.backends.datafusion
+        - ibis.backends.duckdb
         - ibis.backends.pandas
         - ibis.backends.sqlite
 
@@ -88,9 +93,8 @@ outputs:
       run:
         - clickhouse-driver >=0.1.3
         - clickhouse-sqlalchemy >=0.1.4
-        - sqlalchemy >=1.3
-        - python >=3.7
-        - {{ pin_subpackage(name + '-core', max_pin="x.x.x.x") }}
+        - sqlalchemy >=1.4
+        - {{ pin_subpackage(name + '-core') }}
 
     test:
       imports:
@@ -105,32 +109,14 @@ outputs:
 
     requirements:
       run:
-        - pyarrow >=1
         - dask >=2021.10.0
-        - python >=3.7
-        - {{ pin_subpackage(name + '-core', max_pin="x.x.x.x") }}
+        - pyarrow >=1
+        - {{ pin_subpackage(name + '-core') }}
 
     test:
       imports:
         - ibis
         - ibis.backends.dask
-
-  - name: ibis-hdf5
-    version: {{ version }}
-
-    build:
-      noarch: python
-
-    requirements:
-      run:
-        - pytables >=3
-        - python >=3.7
-        - {{ pin_subpackage(name + '-core', max_pin="x.x.x.x") }}
-
-    test:
-      imports:
-        - ibis
-        - ibis.backends.hdf5
 
   - name: ibis-impala
     version: {{ version }}
@@ -140,12 +126,12 @@ outputs:
 
     requirements:
       run:
+        - fsspec >=2022.1.0
         - impyla >=0.17
         - python-hdfs >=2.0.16
         - requests >=2
-        - sqlalchemy >=1.3
-        - python >=3.7
-        - {{ pin_subpackage(name + '-core', max_pin="x.x.x.x") }}
+        - sqlalchemy >=1.4
+        - {{ pin_subpackage(name + '-core') }}
 
     test:
       imports:
@@ -161,31 +147,13 @@ outputs:
     requirements:
       run:
         - pymysql >=1
-        - sqlalchemy >=1.3
-        - python >=3.7
-        - {{ pin_subpackage(name + '-core', max_pin="x.x.x.x") }}
+        - sqlalchemy >=1.4
+        - {{ pin_subpackage(name + '-core') }}
 
     test:
       imports:
         - ibis
         - ibis.backends.mysql
-
-  - name: ibis-parquet
-    version: {{ version }}
-
-    build:
-      noarch: python
-
-    requirements:
-      run:
-        - pyarrow >=1
-        - python >=3.7
-        - {{ pin_subpackage(name + '-core', max_pin="x.x.x.x") }}
-
-    test:
-      imports:
-        - ibis
-        - ibis.backends.parquet
 
   - name: ibis-postgres
     version: {{ version }}
@@ -195,10 +163,9 @@ outputs:
 
     requirements:
       run:
-        - sqlalchemy >=1.3
         - psycopg2 >=2.7
-        - python >=3.7
-        - {{ pin_subpackage(name + '-core', max_pin="x.x.x.x") }}
+        - sqlalchemy >=1.4
+        - {{ pin_subpackage(name + '-core') }}
 
     test:
       imports:
@@ -215,8 +182,7 @@ outputs:
       run:
         - pyarrow >=1
         - pyspark >=2.4.3
-        - python >=3.7
-        - {{ pin_subpackage(name + '-core', max_pin="x.x.x.x") }}
+        - {{ pin_subpackage(name + '-core') }}
 
     test:
       imports:
@@ -231,9 +197,8 @@ outputs:
 
     requirements:
       run:
-        - sqlalchemy >=1.3
-        - python >=3.7
-        - {{ pin_subpackage(name + '-core', max_pin="x.x.x.x") }}
+        - sqlalchemy >=1.4
+        - {{ pin_subpackage(name + '-core') }}
 
     test:
       imports:
@@ -249,13 +214,30 @@ outputs:
     requirements:
       run:
         - datafusion >=0.4
-        - python >=3.7
-        - {{ pin_subpackage(name + '-core', max_pin="x.x.x.x") }}
+        - {{ pin_subpackage(name + '-core') }}
 
     test:
       imports:
         - ibis
         - ibis.backends.datafusion
+
+  - name: ibis-duckdb
+    version: {{ version }}
+
+    build:
+      noarch: python
+
+    requirements:
+      run:
+        - duckdb-engine
+        - python-duckdb
+        - sqlalchemy >=1.4
+        - {{ pin_subpackage(name + '-core') }}
+
+    test:
+      imports:
+        - ibis
+        - ibis.backends.duckdb
 
 about:
   license: Apache-2.0
