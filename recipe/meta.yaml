@@ -47,7 +47,7 @@ outputs:
         - python >=3.8
         - python-graphviz >=0.16
         - regex >=2021.7.6
-        - rich = >=12.4.4,<13
+        - rich >=12.4.4,<13
         - tabulate >=0.8.9
         - toolz >=0.11
 
