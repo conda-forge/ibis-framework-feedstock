@@ -94,7 +94,7 @@ outputs:
       run:
         - clickhouse-driver >=0.1.3
         - clickhouse-sqlalchemy >=0.1.4
-        - sqlalchemy >=1.4
+        - sqlalchemy <2.0,>=1.4
         - {{ pin_subpackage(name + '-core') }}
 
     test:
@@ -131,7 +131,7 @@ outputs:
         - impyla >=0.17
         - python-hdfs >=2.0.16
         - requests >=2
-        - sqlalchemy >=1.4
+        - sqlalchemy <2.0,>=1.4
         - {{ pin_subpackage(name + '-core') }}
 
     test:
@@ -148,7 +148,7 @@ outputs:
     requirements:
       run:
         - pymysql >=1
-        - sqlalchemy >=1.4
+        - sqlalchemy <2.0,>=1.4
         - {{ pin_subpackage(name + '-core') }}
 
     test:
@@ -165,7 +165,7 @@ outputs:
     requirements:
       run:
         - psycopg2 >=2.7
-        - sqlalchemy >=1.4
+        - sqlalchemy <2.0,>=1.4
         - {{ pin_subpackage(name + '-core') }}
 
     test:
@@ -183,6 +183,7 @@ outputs:
       run:
         - pyarrow >=1
         - pyspark >=2.4.3
+        - sqlalchemy <2.0,>=1.4
         - {{ pin_subpackage(name + '-core') }}
 
     test:
@@ -198,7 +199,7 @@ outputs:
 
     requirements:
       run:
-        - sqlalchemy >=1.4
+        - sqlalchemy <2.0,>=1.4
         - {{ pin_subpackage(name + '-core') }}
 
     test:
@@ -232,7 +233,7 @@ outputs:
       run:
         - duckdb-engine
         - python-duckdb
-        - sqlalchemy >=1.4
+        - sqlalchemy <2.0,>=1.4
         - {{ pin_subpackage(name + '-core') }}
 
     test:
