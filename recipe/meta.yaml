@@ -253,13 +253,12 @@ outputs:
     requirements:
       run:
         - duckdb-engine
+        - packaging >=21.3
         - python-duckdb
         - sqlalchemy <2.0,>=1.4
         - {{ pin_subpackage(name + '-core') }}
 
     test:
-      requires:
-        - packaging >=21.3
       imports:
         - ibis
         - ibis.backends.duckdb
