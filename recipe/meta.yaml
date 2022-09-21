@@ -71,6 +71,7 @@ outputs:
         - dask >=2021.10.0
         - datafusion <0.7,>=0.4
         - duckdb-engine <1,>=0.1.8
+        - packaging >=21.3  # just necessary for duckdb backend
         - pyarrow <10,>=1
         - python-duckdb <1,>=0.3.2
         - python-graphviz <0.21,>=0.16
@@ -78,8 +79,6 @@ outputs:
         - {{ pin_subpackage(name + '-core') }}
 
     test:
-      requires:
-        - packaging >=21.3
       imports:
         - ibis
         - ibis.backends.dask
