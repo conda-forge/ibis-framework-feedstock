@@ -27,6 +27,7 @@ Current release info
 
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-ibis--bigquery-green.svg)](https://anaconda.org/conda-forge/ibis-bigquery) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/ibis-bigquery.svg)](https://anaconda.org/conda-forge/ibis-bigquery) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/ibis-bigquery.svg)](https://anaconda.org/conda-forge/ibis-bigquery) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/ibis-bigquery.svg)](https://anaconda.org/conda-forge/ibis-bigquery) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-ibis--clickhouse-green.svg)](https://anaconda.org/conda-forge/ibis-clickhouse) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/ibis-clickhouse.svg)](https://anaconda.org/conda-forge/ibis-clickhouse) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/ibis-clickhouse.svg)](https://anaconda.org/conda-forge/ibis-clickhouse) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/ibis-clickhouse.svg)](https://anaconda.org/conda-forge/ibis-clickhouse) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-ibis--dask-green.svg)](https://anaconda.org/conda-forge/ibis-dask) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/ibis-dask.svg)](https://anaconda.org/conda-forge/ibis-dask) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/ibis-dask.svg)](https://anaconda.org/conda-forge/ibis-dask) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/ibis-dask.svg)](https://anaconda.org/conda-forge/ibis-dask) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-ibis--datafusion-green.svg)](https://anaconda.org/conda-forge/ibis-datafusion) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/ibis-datafusion.svg)](https://anaconda.org/conda-forge/ibis-datafusion) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/ibis-datafusion.svg)](https://anaconda.org/conda-forge/ibis-datafusion) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/ibis-datafusion.svg)](https://anaconda.org/conda-forge/ibis-datafusion) |
@@ -34,10 +35,13 @@ Current release info
 | [![Conda Recipe](https://img.shields.io/badge/recipe-ibis--framework-green.svg)](https://anaconda.org/conda-forge/ibis-framework) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/ibis-framework.svg)](https://anaconda.org/conda-forge/ibis-framework) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/ibis-framework.svg)](https://anaconda.org/conda-forge/ibis-framework) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/ibis-framework.svg)](https://anaconda.org/conda-forge/ibis-framework) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-ibis--framework--core-green.svg)](https://anaconda.org/conda-forge/ibis-framework-core) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/ibis-framework-core.svg)](https://anaconda.org/conda-forge/ibis-framework-core) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/ibis-framework-core.svg)](https://anaconda.org/conda-forge/ibis-framework-core) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/ibis-framework-core.svg)](https://anaconda.org/conda-forge/ibis-framework-core) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-ibis--impala-green.svg)](https://anaconda.org/conda-forge/ibis-impala) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/ibis-impala.svg)](https://anaconda.org/conda-forge/ibis-impala) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/ibis-impala.svg)](https://anaconda.org/conda-forge/ibis-impala) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/ibis-impala.svg)](https://anaconda.org/conda-forge/ibis-impala) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-ibis--mssql-green.svg)](https://anaconda.org/conda-forge/ibis-mssql) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/ibis-mssql.svg)](https://anaconda.org/conda-forge/ibis-mssql) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/ibis-mssql.svg)](https://anaconda.org/conda-forge/ibis-mssql) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/ibis-mssql.svg)](https://anaconda.org/conda-forge/ibis-mssql) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-ibis--mysql-green.svg)](https://anaconda.org/conda-forge/ibis-mysql) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/ibis-mysql.svg)](https://anaconda.org/conda-forge/ibis-mysql) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/ibis-mysql.svg)](https://anaconda.org/conda-forge/ibis-mysql) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/ibis-mysql.svg)](https://anaconda.org/conda-forge/ibis-mysql) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-ibis--postgres-green.svg)](https://anaconda.org/conda-forge/ibis-postgres) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/ibis-postgres.svg)](https://anaconda.org/conda-forge/ibis-postgres) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/ibis-postgres.svg)](https://anaconda.org/conda-forge/ibis-postgres) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/ibis-postgres.svg)](https://anaconda.org/conda-forge/ibis-postgres) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-ibis--pyspark-green.svg)](https://anaconda.org/conda-forge/ibis-pyspark) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/ibis-pyspark.svg)](https://anaconda.org/conda-forge/ibis-pyspark) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/ibis-pyspark.svg)](https://anaconda.org/conda-forge/ibis-pyspark) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/ibis-pyspark.svg)](https://anaconda.org/conda-forge/ibis-pyspark) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-ibis--snowflake-green.svg)](https://anaconda.org/conda-forge/ibis-snowflake) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/ibis-snowflake.svg)](https://anaconda.org/conda-forge/ibis-snowflake) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/ibis-snowflake.svg)](https://anaconda.org/conda-forge/ibis-snowflake) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/ibis-snowflake.svg)](https://anaconda.org/conda-forge/ibis-snowflake) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-ibis--sqlite-green.svg)](https://anaconda.org/conda-forge/ibis-sqlite) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/ibis-sqlite.svg)](https://anaconda.org/conda-forge/ibis-sqlite) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/ibis-sqlite.svg)](https://anaconda.org/conda-forge/ibis-sqlite) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/ibis-sqlite.svg)](https://anaconda.org/conda-forge/ibis-sqlite) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-ibis--trino-green.svg)](https://anaconda.org/conda-forge/ibis-trino) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/ibis-trino.svg)](https://anaconda.org/conda-forge/ibis-trino) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/ibis-trino.svg)](https://anaconda.org/conda-forge/ibis-trino) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/ibis-trino.svg)](https://anaconda.org/conda-forge/ibis-trino) |
 
 Installing ibis-framework-ext
 =============================
@@ -49,41 +53,41 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `ibis-clickhouse, ibis-dask, ibis-datafusion, ibis-duckdb, ibis-framework, ibis-framework-core, ibis-impala, ibis-mysql, ibis-postgres, ibis-pyspark, ibis-sqlite` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `ibis-bigquery, ibis-clickhouse, ibis-dask, ibis-datafusion, ibis-duckdb, ibis-framework, ibis-framework-core, ibis-impala, ibis-mssql, ibis-mysql, ibis-postgres, ibis-pyspark, ibis-snowflake, ibis-sqlite, ibis-trino` can be installed with `conda`:
 
 ```
-conda install ibis-clickhouse ibis-dask ibis-datafusion ibis-duckdb ibis-framework ibis-framework-core ibis-impala ibis-mysql ibis-postgres ibis-pyspark ibis-sqlite
-```
-
-or with `mamba`:
-
-```
-mamba install ibis-clickhouse ibis-dask ibis-datafusion ibis-duckdb ibis-framework ibis-framework-core ibis-impala ibis-mysql ibis-postgres ibis-pyspark ibis-sqlite
-```
-
-It is possible to list all of the versions of `ibis-clickhouse` available on your platform with `conda`:
-
-```
-conda search ibis-clickhouse --channel conda-forge
+conda install ibis-bigquery ibis-clickhouse ibis-dask ibis-datafusion ibis-duckdb ibis-framework ibis-framework-core ibis-impala ibis-mssql ibis-mysql ibis-postgres ibis-pyspark ibis-snowflake ibis-sqlite ibis-trino
 ```
 
 or with `mamba`:
 
 ```
-mamba search ibis-clickhouse --channel conda-forge
+mamba install ibis-bigquery ibis-clickhouse ibis-dask ibis-datafusion ibis-duckdb ibis-framework ibis-framework-core ibis-impala ibis-mssql ibis-mysql ibis-postgres ibis-pyspark ibis-snowflake ibis-sqlite ibis-trino
+```
+
+It is possible to list all of the versions of `ibis-bigquery` available on your platform with `conda`:
+
+```
+conda search ibis-bigquery --channel conda-forge
+```
+
+or with `mamba`:
+
+```
+mamba search ibis-bigquery --channel conda-forge
 ```
 
 Alternatively, `mamba repoquery` may provide more information:
 
 ```
 # Search all versions available on your platform:
-mamba repoquery search ibis-clickhouse --channel conda-forge
+mamba repoquery search ibis-bigquery --channel conda-forge
 
-# List packages depending on `ibis-clickhouse`:
-mamba repoquery whoneeds ibis-clickhouse --channel conda-forge
+# List packages depending on `ibis-bigquery`:
+mamba repoquery whoneeds ibis-bigquery --channel conda-forge
 
-# List dependencies of `ibis-clickhouse`:
-mamba repoquery depends ibis-clickhouse --channel conda-forge
+# List dependencies of `ibis-bigquery`:
+mamba repoquery depends ibis-bigquery --channel conda-forge
 ```
 
 
