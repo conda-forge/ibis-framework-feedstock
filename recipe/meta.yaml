@@ -1,18 +1,16 @@
 {% set name = "ibis-framework" %}
-{% set version = "3.2.0" %}
+{% set version = "4.0.0" %}
 
 package:
   name: {{ name }}-ext
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 49d86a6cc32b91df057a30e8729b530e261bd5b49bce55736796acc64da72cc8
-  patches:
-    - patches/pyproject.toml.patch
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace("-", "_") }}-{{ version }}.tar.gz
+  sha256: edefdbb6e0970a4af9e5f72dac068b1df35905cab4895e17e27b0ebb33315c09
 
 build:
-  number: 1
+  number: 0
 
 requirements:
   host:
@@ -49,6 +47,8 @@ outputs:
         - python-graphviz >=0.16
         - regex >=2021.7.6
         - rich >=12.4.4,<13
+        - pytz >=2022.7
+        - python-dateutil >=2.8.2
         - sqlglot >=4.5.0,<7
         - toolz >=0.11
 
@@ -67,25 +67,17 @@ outputs:
 
     requirements:
       run:
-        - atpublic <4,>=2.3
-        - dask >=2021.10.0
-        - datafusion <0.7,>=0.4
-        - duckdb-engine <1,>=0.1.8
-        - packaging >=21.3  # just necessary for duckdb backend
-        - pyarrow <10,>=1
-        - python-duckdb <1,>=0.3.2
-        - python-graphviz <0.21,>=0.16
+        - duckdb-engine >=0.1.8
+        - python-duckdb >=0.3.2
         - sqlalchemy <2.0,>=1.4
+        - pyarrow >=1
+        - python-graphviz <0.21,>=0.16
         - {{ pin_subpackage(name + '-core') }}
 
     test:
       imports:
         - ibis
-        - ibis.backends.dask
-        - ibis.backends.datafusion
         - ibis.backends.duckdb
-        - ibis.backends.pandas
-        - ibis.backends.sqlite
 
 
   - name: ibis-clickhouse
@@ -178,6 +170,8 @@ outputs:
       run:
         - psycopg2 >=2.7
         - sqlalchemy <2.0,>=1.4
+        # TODO: remove after we fix the accidental import upstream
+        - pyarrow >=1.0.0
         - {{ pin_subpackage(name + '-core') }}
 
     test:
@@ -251,9 +245,8 @@ outputs:
 
     requirements:
       run:
-        - duckdb-engine
-        - packaging >=21.3
-        - python-duckdb
+        - duckdb-engine >=0.1.8
+        - python-duckdb >=0.3.2
         - sqlalchemy <2.0,>=1.4
         - {{ pin_subpackage(name + '-core') }}
 
@@ -261,6 +254,83 @@ outputs:
       imports:
         - ibis
         - ibis.backends.duckdb
+
+  - name: ibis-mssql
+    version: {{ version }}
+
+    build:
+      noarch: python
+
+    requirements:
+      run:
+        - pymssql >=2.2.5
+        - sqlalchemy <2.0,>=1.4
+        - {{ pin_subpackage(name + '-core') }}
+
+    test:
+      imports:
+        - ibis
+        - ibis.backends.mssql
+
+
+  - name: ibis-bigquery
+    version: {{ version }}
+
+    build:
+      noarch: python
+
+    requirements:
+      run:
+        - db-dtypes >=0.3.0,<2
+        - google-cloud-bigquery >=3,<4
+        - google-cloud-bigquery-storage >=2,<3
+        - pyarrow >=1.0.0
+        - pydata-google-auth
+        - sqlalchemy <2.0,>=1.4
+        - {{ pin_subpackage(name + '-core') }}
+
+    test:
+      imports:
+        - ibis
+        - ibis.backends.bigquery
+
+  - name: ibis-trino
+    version: {{ version }}
+
+    build:
+      noarch: python
+
+    requirements:
+      run:
+        # TODO: remove pyarrow after fixing import issue in postgres datatypes
+        - pyarrow >=1.0.0
+        - trino-python-client >=0.319.0
+        - sqlalchemy <2.0,>=1.4
+        - {{ pin_subpackage(name + '-core') }}
+
+    test:
+      imports:
+        - ibis
+        - ibis.backends.trino
+
+  - name: ibis-snowflake
+    version: {{ version }}
+
+    build:
+      noarch: python
+
+    requirements:
+      run:
+        - snowflake-connector-python >=2.7.10
+        - snowflake-sqlalchemy >=1.4.1
+        - sqlalchemy <2.0,>=1.4
+        - pandas >=1.2.5
+        - {{ pin_subpackage(name + '-core') }}
+
+    test:
+      imports:
+        - ibis
+        - ibis.backends.snowflake
 
 about:
   license: Apache-2.0
