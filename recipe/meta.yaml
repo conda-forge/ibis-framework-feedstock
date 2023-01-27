@@ -10,7 +10,7 @@ source:
   sha256: c9e847a7e867f87cfcd8d5aa9d26e2cc1dcd83c02eca6e22aa262b66f241a568
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   host:
@@ -35,21 +35,18 @@ outputs:
 
       run:
         - atpublic >=2.3
-        - cached_property >=1
-        - importlib-metadata >=4
         - multipledispatch >=0.6
         - numpy >=1.15
         - pandas >=1.2.5
         - parsy >=1.3.0
-        - poetry-dynamic-versioning >=0.14.0
-        - pydantic >=1.9.0
+        - poetry-dynamic-versioning >=0.18.0
         - python >=3.8
         - python-graphviz >=0.16
         - regex >=2021.7.6
-        - rich >=12.4.4,<13
+        - rich >=12.4.4
         - pytz >=2022.7
         - python-dateutil >=2.8.2
-        - sqlglot >=4.5.0,<7
+        - sqlglot >=10.4.3
         - toolz >=0.11
 
     test:
@@ -68,11 +65,11 @@ outputs:
     requirements:
       run:
         - duckdb-engine >=0.1.8
-        - python-duckdb >=0.3.2
+        - python-duckdb >=0.3.3
         - sqlalchemy <2.0,>=1.4
         - sqlalchemy-views >=0.3.1
         - pyarrow >=1
-        - python-graphviz <0.21,>=0.16
+        - python-graphviz >=0.16
         - {{ pin_subpackage(name + '-core') }}
 
     test:
@@ -109,7 +106,7 @@ outputs:
 
     requirements:
       run:
-        - dask >=2021.10.0
+        - dask >=2022.9.1
         - pyarrow >=1
         - {{ pin_subpackage(name + '-core') }}
 
@@ -130,7 +127,6 @@ outputs:
       run:
         - fsspec >=2022.1.0
         - impyla >=0.17
-        - python-hdfs >=2.0.16
         - requests >=2
         - sqlalchemy <2.0,>=1.4
         - {{ pin_subpackage(name + '-core') }}
@@ -169,7 +165,7 @@ outputs:
 
     requirements:
       run:
-        - psycopg2 >=2.7
+        - psycopg2 >=2.8.4
         - sqlalchemy <2.0,>=1.4
         - {{ pin_subpackage(name + '-core') }}
 
@@ -188,8 +184,8 @@ outputs:
 
     requirements:
       run:
-        - pyarrow >=1
-        - pyspark >=2.4.3
+        - pyarrow >=2
+        - pyspark >=3
         - sqlalchemy <2.0,>=1.4
         - {{ pin_subpackage(name + '-core') }}
 
@@ -226,7 +222,7 @@ outputs:
 
     requirements:
       run:
-        - datafusion >=0.4
+        - datafusion >=0.6
         - {{ pin_subpackage(name + '-core') }}
 
     test:
@@ -245,7 +241,7 @@ outputs:
     requirements:
       run:
         - duckdb-engine >=0.1.8
-        - python-duckdb >=0.3.2
+        - python-duckdb >=0.3.3
         - sqlalchemy-views >=0.3.1
         - sqlalchemy <2.0,>=1.4
         - {{ pin_subpackage(name + '-core') }}
@@ -284,7 +280,7 @@ outputs:
         - db-dtypes >=0.3.0,<2
         - google-cloud-bigquery >=3,<4
         - google-cloud-bigquery-storage >=2,<3
-        - pyarrow >=1.0.0
+        - pyarrow >=2
         - pydata-google-auth
         - sqlalchemy <2.0,>=1.4
         - {{ pin_subpackage(name + '-core') }}
