@@ -1,5 +1,5 @@
 {% set name = "ibis-framework" %}
-{% set version = "4.0.0" %}
+{% set version = "4.1.0" %}
 
 package:
   name: {{ name }}-ext
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace("-", "_") }}-{{ version }}.tar.gz
-  sha256: edefdbb6e0970a4af9e5f72dac068b1df35905cab4895e17e27b0ebb33315c09
+  sha256: c9e847a7e867f87cfcd8d5aa9d26e2cc1dcd83c02eca6e22aa262b66f241a568
 
 build:
   number: 0
@@ -70,6 +70,7 @@ outputs:
         - duckdb-engine >=0.1.8
         - python-duckdb >=0.3.2
         - sqlalchemy <2.0,>=1.4
+        - sqlalchemy-views >=0.3.1
         - pyarrow >=1
         - python-graphviz <0.21,>=0.16
         - {{ pin_subpackage(name + '-core') }}
@@ -170,8 +171,6 @@ outputs:
       run:
         - psycopg2 >=2.7
         - sqlalchemy <2.0,>=1.4
-        # TODO: remove after we fix the accidental import upstream
-        - pyarrow >=1.0.0
         - {{ pin_subpackage(name + '-core') }}
 
     test:
@@ -247,6 +246,7 @@ outputs:
       run:
         - duckdb-engine >=0.1.8
         - python-duckdb >=0.3.2
+        - sqlalchemy-views >=0.3.1
         - sqlalchemy <2.0,>=1.4
         - {{ pin_subpackage(name + '-core') }}
 
@@ -302,8 +302,6 @@ outputs:
 
     requirements:
       run:
-        # TODO: remove pyarrow after fixing import issue in postgres datatypes
-        - pyarrow >=1.0.0
         - trino-python-client >=0.319.0
         - sqlalchemy <2.0,>=1.4
         - {{ pin_subpackage(name + '-core') }}
