@@ -40,7 +40,7 @@ outputs:
         - numpy >=1.15
         - pandas >=1.2.5
         - parsy >=2
-        - pooch >=1.6.0
+        - pooch >=1.7.0
         - poetry-dynamic-versioning >=0.18.0
         - python >=3.8
         - python-graphviz >=0.16
