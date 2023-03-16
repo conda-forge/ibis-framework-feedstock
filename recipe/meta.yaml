@@ -35,6 +35,7 @@ outputs:
 
       run:
         - atpublic >=2.3
+        - bidict >=0.22.1
         - multipledispatch >=0.6
         - numpy >=1.15
         - pandas >=1.2.5
