@@ -326,6 +326,41 @@ outputs:
         - ibis
         - ibis.backends.snowflake
 
+  - name: ibis-polars
+    version: {{ version }}
+
+    build:
+      noarch: python
+
+    requirements:
+      run:
+        - {{ pin_subpackage(name + '-core') }}
+        - polars >=0.14
+
+    test:
+      imports:
+        - ibis
+        - ibis.backends.polars
+
+  - name: ibis-druid
+    version: {{ version }}
+
+    build:
+      noarch: python
+
+    requirements:
+      run:
+        - {{ pin_subpackage(name + '-core') }}
+        - pydruid >=0.6.5
+        - sqlalchemy <3,>=1.4
+        - sqlalchemy-views <1,>=0.3.1
+
+    test:
+      imports:
+        - ibis
+        - ibis.backends.druid
+
+
 about:
   license: Apache-2.0
   license_family: Apache
