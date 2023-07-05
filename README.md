@@ -38,6 +38,7 @@ Current release info
 | [![Conda Recipe](https://img.shields.io/badge/recipe-ibis--impala-green.svg)](https://anaconda.org/conda-forge/ibis-impala) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/ibis-impala.svg)](https://anaconda.org/conda-forge/ibis-impala) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/ibis-impala.svg)](https://anaconda.org/conda-forge/ibis-impala) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/ibis-impala.svg)](https://anaconda.org/conda-forge/ibis-impala) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-ibis--mssql-green.svg)](https://anaconda.org/conda-forge/ibis-mssql) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/ibis-mssql.svg)](https://anaconda.org/conda-forge/ibis-mssql) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/ibis-mssql.svg)](https://anaconda.org/conda-forge/ibis-mssql) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/ibis-mssql.svg)](https://anaconda.org/conda-forge/ibis-mssql) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-ibis--mysql-green.svg)](https://anaconda.org/conda-forge/ibis-mysql) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/ibis-mysql.svg)](https://anaconda.org/conda-forge/ibis-mysql) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/ibis-mysql.svg)](https://anaconda.org/conda-forge/ibis-mysql) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/ibis-mysql.svg)](https://anaconda.org/conda-forge/ibis-mysql) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-ibis--oracle-green.svg)](https://anaconda.org/conda-forge/ibis-oracle) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/ibis-oracle.svg)](https://anaconda.org/conda-forge/ibis-oracle) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/ibis-oracle.svg)](https://anaconda.org/conda-forge/ibis-oracle) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/ibis-oracle.svg)](https://anaconda.org/conda-forge/ibis-oracle) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-ibis--polars-green.svg)](https://anaconda.org/conda-forge/ibis-polars) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/ibis-polars.svg)](https://anaconda.org/conda-forge/ibis-polars) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/ibis-polars.svg)](https://anaconda.org/conda-forge/ibis-polars) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/ibis-polars.svg)](https://anaconda.org/conda-forge/ibis-polars) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-ibis--postgres-green.svg)](https://anaconda.org/conda-forge/ibis-postgres) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/ibis-postgres.svg)](https://anaconda.org/conda-forge/ibis-postgres) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/ibis-postgres.svg)](https://anaconda.org/conda-forge/ibis-postgres) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/ibis-postgres.svg)](https://anaconda.org/conda-forge/ibis-postgres) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-ibis--pyspark-green.svg)](https://anaconda.org/conda-forge/ibis-pyspark) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/ibis-pyspark.svg)](https://anaconda.org/conda-forge/ibis-pyspark) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/ibis-pyspark.svg)](https://anaconda.org/conda-forge/ibis-pyspark) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/ibis-pyspark.svg)](https://anaconda.org/conda-forge/ibis-pyspark) |
@@ -55,16 +56,16 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `ibis-bigquery, ibis-clickhouse, ibis-dask, ibis-datafusion, ibis-druid, ibis-duckdb, ibis-framework, ibis-framework-core, ibis-impala, ibis-mssql, ibis-mysql, ibis-polars, ibis-postgres, ibis-pyspark, ibis-snowflake, ibis-sqlite, ibis-trino` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `ibis-bigquery, ibis-clickhouse, ibis-dask, ibis-datafusion, ibis-druid, ibis-duckdb, ibis-framework, ibis-framework-core, ibis-impala, ibis-mssql, ibis-mysql, ibis-oracle, ibis-polars, ibis-postgres, ibis-pyspark, ibis-snowflake, ibis-sqlite, ibis-trino` can be installed with `conda`:
 
 ```
-conda install ibis-bigquery ibis-clickhouse ibis-dask ibis-datafusion ibis-druid ibis-duckdb ibis-framework ibis-framework-core ibis-impala ibis-mssql ibis-mysql ibis-polars ibis-postgres ibis-pyspark ibis-snowflake ibis-sqlite ibis-trino
+conda install ibis-bigquery ibis-clickhouse ibis-dask ibis-datafusion ibis-druid ibis-duckdb ibis-framework ibis-framework-core ibis-impala ibis-mssql ibis-mysql ibis-oracle ibis-polars ibis-postgres ibis-pyspark ibis-snowflake ibis-sqlite ibis-trino
 ```
 
 or with `mamba`:
 
 ```
-mamba install ibis-bigquery ibis-clickhouse ibis-dask ibis-datafusion ibis-druid ibis-duckdb ibis-framework ibis-framework-core ibis-impala ibis-mssql ibis-mysql ibis-polars ibis-postgres ibis-pyspark ibis-snowflake ibis-sqlite ibis-trino
+mamba install ibis-bigquery ibis-clickhouse ibis-dask ibis-datafusion ibis-druid ibis-duckdb ibis-framework ibis-framework-core ibis-impala ibis-mssql ibis-mysql ibis-oracle ibis-polars ibis-postgres ibis-pyspark ibis-snowflake ibis-sqlite ibis-trino
 ```
 
 It is possible to list all of the versions of `ibis-bigquery` available on your platform with `conda`:
