@@ -295,7 +295,7 @@ outputs:
 
     requirements:
       run:
-        - trino-python-client >=0.319.0
+        - trino-python-client >=0.321
         - sqlalchemy >=1.4
         - {{ pin_subpackage(name + '-core') }}
 
