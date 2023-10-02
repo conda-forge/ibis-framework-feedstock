@@ -41,18 +41,16 @@ outputs:
         - numpy >=1.15
         - pandas >=1.2.5
         - parsy >=2
-        - pooch >=1.7.0
+        - pins >=0.8.2
         - poetry-dynamic-versioning >=0.18.0
         - pyarrow >=2
         - python >=3.9
         - python-graphviz >=0.16
-        - python-xxhash >=1.4.3
         - regex >=2021.7.6
         - rich >=12.4.4
         - pytz >=2022.7
         - python-dateutil >=2.8.2
-        - sqlglot >=10.4.3
-        - tqdm >=4.41.0,<5.0.0
+        - sqlglot >=18.7.0
         - toolz >=0.11
 
     test:
