@@ -312,10 +312,9 @@ outputs:
 
     requirements:
       run:
-        - snowflake-connector-python >=2.7.10
+        - snowflake-connector-python >=3.0.2
         - snowflake-sqlalchemy >=1.4.1
-        - sqlalchemy >=1.4
-        - pandas >=1.2.5
+        - sqlalchemy >=1.4,<2
         - {{ pin_subpackage(name + '-core') }}
 
     test:
