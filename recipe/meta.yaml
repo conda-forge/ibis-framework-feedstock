@@ -333,7 +333,7 @@ outputs:
     requirements:
       run:
         - {{ pin_subpackage(name + '-core') }}
-        - polars >=0.14
+        - polars >=0.19
 
     test:
       imports:
