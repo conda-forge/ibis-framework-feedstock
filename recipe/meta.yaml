@@ -23,8 +23,6 @@ outputs:
     build:
       noarch: python
       script:
-        # TODO: make this work without short-circuiting poetry
-        - rm pyproject.toml || del pyproject.toml
         - python -m pip install . -vv --no-deps
 
     requirements:
