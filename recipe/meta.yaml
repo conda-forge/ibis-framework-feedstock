@@ -368,6 +368,7 @@ outputs:
       run:
         - {{ pin_subpackage(name + '-core') }}
         - oracledb >=1.3.1
+        - packaging >=21.3
         - sqlalchemy >=1.4
         - sqlalchemy-views <1,>=0.3.1
 
