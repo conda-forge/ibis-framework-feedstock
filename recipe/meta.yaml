@@ -43,6 +43,7 @@ outputs:
         - pandas >=1.2.5
         - parsy >=2
         - pins >=0.8.2
+        - pyarrow-hotfix
         - pyarrow >=2
         - python >=3.9
         - python-graphviz >=0.16
