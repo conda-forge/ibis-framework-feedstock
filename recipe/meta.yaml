@@ -230,6 +230,7 @@ outputs:
       run:
         - pyspark >=3
         - sqlalchemy >=1.4
+        - packaging >=21.3
         - {{ pin_subpackage(name + '-core') }}
 
     test:
@@ -309,6 +310,8 @@ outputs:
         - {{ pin_subpackage(name + '-core') }}
 
     test:
+      requires:
+        - packaging >=21.3
       imports:
         - ibis
         - ibis.backends.pandas
@@ -395,6 +398,7 @@ outputs:
     requirements:
       run:
         - {{ pin_subpackage(name + '-core') }}
+        - packaging >=21.3
         - polars >=0.19
 
     test:
