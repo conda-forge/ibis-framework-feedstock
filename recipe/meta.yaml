@@ -10,7 +10,7 @@ source:
   sha256: 2eceb8c461230550dea43db8efd5c3ecb066a063fc0ef59e25450053eb412900
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   host:
@@ -55,8 +55,6 @@ outputs:
         - toolz >=0.11
 
     test:
-      requires:
-        - packaging >=21.3
       imports:
         - ibis
         - ibis.backends.pandas
@@ -74,50 +72,6 @@ outputs:
         - sqlalchemy <3,>=1.4
         - sqlalchemy-views <1,>=0.3.1
         - {{ pin_subpackage(name + '-core') }}
-        # - typing_extensions <5,>=4.3.0
-        # - trino-python-client <1,>=0.321
-        # - toolz <1,>=0.11
-        # - sqlglot <20,>=18.12.0
-        # - snowflake-sqlalchemy <2,>=1.4.1
-        # - snowflake-connector-python !=3.3.0b1,<4,>=3.0.2
-        # - shapely <3,>=2
-        # - rich <14,>=12.4.4
-        # - requests <3,>=2
-        # - regex >=2021.7.6
-        # - pytz >=2022.7
-        # - python-graphviz <1,>=0.16
-        # - python-dateutil <3,>=2.8.2
-        # - pyspark <3.4,>=3
-        # - pymysql <2,>=1
-        # - pymssql <3,>=2.2.5
-        # - pydruid <1,>=0.6.5
-        # - pydata-google-auth <2,>=1.4.0
-        # - pyarrow-hotfix <1,>=0.4
-        # - pyarrow <15,>=2
-        # - psycopg2 <3,>=2.8.4
-        # - polars <1,>=0.19.3
-        # - pins <1,>=0.8.3
-        # - parsy <3,>=2
-        # - pandas <3,>=1.2.5
-        # - packaging <24,>=21.3
-        # - oracledb <2,>=1.3.1
-        # - numpy <2,>=1
-        # - multipledispatch <2,>=0.6
-        # - impyla <1,>=0.17
-        # - google-cloud-bigquery-storage <3,>=2
-        # - google-cloud-bigquery <4,>=3
-        # - geopandas <1,>=0.6
-        # - geoalchemy2 <1,>=0.6.3
-        # - fsspec >=2022.1.0
-        # - filelock <4,>=3.7.0
-        # - deltalake <1,>=0.9.0
-        # - db-dtypes <2,>=0.3
-        # - datafusion <33,>=0.6
-        # - dask-core >=2022.9.1
-        # - clickhouse-connect <1,>=0.5.23
-        # - black <24,>=22.1.0
-        # - bidict <1,>=0.22.1
-        # - atpublic <5,>=2.3
     test:
       imports:
         - ibis
@@ -137,8 +91,6 @@ outputs:
         - {{ pin_subpackage(name + '-core') }}
 
     test:
-      requires:
-        - packaging >=21.3
       imports:
         - ibis
         - ibis.backends.clickhouse
@@ -155,8 +107,6 @@ outputs:
         - {{ pin_subpackage(name + '-core') }}
 
     test:
-      requires:
-        - packaging >=21.3
       imports:
         - ibis
         - ibis.backends.dask
@@ -176,8 +126,6 @@ outputs:
         - {{ pin_subpackage(name + '-core') }}
 
     test:
-      requires:
-        - packaging >=21.3
       imports:
         - ibis
         - ibis.backends.impala
@@ -195,8 +143,6 @@ outputs:
         - {{ pin_subpackage(name + '-core') }}
 
     test:
-      requires:
-        - packaging >=21.3
       imports:
         - ibis
         - ibis.backends.mysql
@@ -214,8 +160,6 @@ outputs:
         - {{ pin_subpackage(name + '-core') }}
 
     test:
-      requires:
-        - packaging >=21.3
       imports:
         - ibis
         - ibis.backends.postgres
@@ -230,11 +174,10 @@ outputs:
       run:
         - pyspark >=3
         - sqlalchemy >=1.4
+        - packaging >=21.3
         - {{ pin_subpackage(name + '-core') }}
 
     test:
-      requires:
-        - packaging >=21.3
       imports:
         - ibis
         - ibis.backends.pyspark
@@ -251,8 +194,6 @@ outputs:
         - {{ pin_subpackage(name + '-core') }}
 
     test:
-      requires:
-        - packaging >=21.3
       imports:
         - ibis
         - ibis.backends.sqlite
@@ -269,8 +210,6 @@ outputs:
         - {{ pin_subpackage(name + '-core') }}
 
     test:
-      requires:
-        - packaging >=21.3
       imports:
         - ibis
         - ibis.backends.datafusion
@@ -293,6 +232,25 @@ outputs:
       imports:
         - ibis
         - ibis.backends.duckdb
+
+  - name: ibis-pandas
+    version: {{ version }}
+
+    build:
+      noarch: python
+
+    requirements:
+      run:
+        - duckdb-engine >=0.1.8
+        - python-duckdb >=0.8.1
+        - sqlalchemy-views >=0.3.1
+        - sqlalchemy >=1.4
+        - {{ pin_subpackage(name + '-core') }}
+
+    test:
+      imports:
+        - ibis
+        - ibis.backends.pandas
 
   - name: ibis-mssql
     version: {{ version }}
@@ -376,6 +334,7 @@ outputs:
     requirements:
       run:
         - {{ pin_subpackage(name + '-core') }}
+        - packaging >=21.3
         - polars >=0.19
 
     test:
