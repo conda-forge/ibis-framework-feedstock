@@ -10,7 +10,7 @@ source:
   sha256: 2eceb8c461230550dea43db8efd5c3ecb066a063fc0ef59e25450053eb412900
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   host:
@@ -293,6 +293,25 @@ outputs:
       imports:
         - ibis
         - ibis.backends.duckdb
+
+  - name: ibis-pandas
+    version: {{ version }}
+
+    build:
+      noarch: python
+
+    requirements:
+      run:
+        - duckdb-engine >=0.1.8
+        - python-duckdb >=0.8.1
+        - sqlalchemy-views >=0.3.1
+        - sqlalchemy >=1.4
+        - {{ pin_subpackage(name + '-core') }}
+
+    test:
+      imports:
+        - ibis
+        - ibis.backends.pandas
 
   - name: ibis-mssql
     version: {{ version }}
