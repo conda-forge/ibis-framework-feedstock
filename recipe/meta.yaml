@@ -10,7 +10,7 @@ source:
   sha256: b137493eb5436dcc01d0a7602e44a0633fbcd5078bec6ec19090445ebcd323f3
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   host:
@@ -423,6 +423,24 @@ outputs:
       imports:
         - ibis
         - ibis.backends.oracle
+
+  - name: ibis-exasol
+    version: {{ version }}
+
+    build:
+      noarch: python
+
+    requirements:
+      run:
+        - {{ pin_subpackage(name + '-core') }}
+        - sqlalchemy_exasol >=4.6.0
+        - sqlalchemy >=1.4,<3
+        - sqlalchemy-views <1,>=0.3.1
+
+    test:
+      imports:
+        - ibis
+        - ibis.backends.exasol
 
 
 about:
