@@ -38,20 +38,20 @@ outputs:
         - atpublic >=2.3
         - bidict >=0.22.1
         - filelock >=3.7.0,<4
-        - multipledispatch >=0.6
-        - numpy >=1.15
+        - multipledispatch >=0.6,<2
+        - numpy >=1.15,<2
         - pandas >=1.2.5
         - parsy >=2
         - pins >=0.8.2
-        - pyarrow-hotfix
         - pyarrow >=2
+        - pyarrow-hotfix >=0.4
         - python >=3.9
         - python-graphviz >=0.16
         - regex >=2021.7.6
         - rich >=12.4.4
         - pytz >=2022.7
         - python-dateutil >=2.8.2
-        - sqlglot >=18.7.0
+        - sqlglot >=18.7.0,<=20.11
         - toolz >=0.11
 
     test:
