@@ -1,5 +1,5 @@
 {% set name = "ibis-framework" %}
-{% set version = "7.2.0" %}
+{% set version = "8.0.0" %}
 
 package:
   name: {{ name }}-ext
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace("-", "_") }}-{{ version }}.tar.gz
-  sha256: b137493eb5436dcc01d0a7602e44a0633fbcd5078bec6ec19090445ebcd323f3
+  sha256: 20e74a0cdbd5fc03c96955fdb80ad4cc6d16518c28339e24a2b0f930bc40eeb6
 
 build:
-  number: 1
+  number: 0
 
 requirements:
   host:
@@ -115,6 +115,49 @@ outputs:
         # - dask-core >=2022.9.1
         # - clickhouse-connect <1,>=0.5.23
         # - black <24,>=22.1.0
+        # - bidict <1,>=0.22.1
+        # - atpublic <5,>=2.3
+        # - typing_extensions <5,>=4.3.0
+        # - trino-python-client <1,>=0.321
+        # - toolz <1,>=0.11
+        # - sqlglot <=20.11,>=18.12.0
+        # - sqlalchemy_exasol >=4.6.0
+        # - sqlalchemy-risingwave <2,>=1.0.0
+        # - snowflake-sqlalchemy <2,>=1.4.1
+        # - snowflake-connector-python !=3.3.0b1,<4,>=3.0.2
+        # - shapely <3,>=2
+        # - rich <14,>=12.4.4
+        # - regex >=2021.7.6
+        # - pytz >=2022.7
+        # - python-graphviz <1,>=0.16
+        # - python-dateutil <3,>=2.8.2
+        # - pyspark <3.4,>=3
+        # - pyodbc <6,>=4.0.39
+        # - pymysql <2,>=1
+        # - pydruid <1,>=0.6.5
+        # - pydata-google-auth <2,>=1.4.0
+        # - pyarrow-hotfix <1,>=0.4
+        # - pyarrow <16,>=2
+        # - psycopg2 <3,>=2.8.4
+        # - polars <1,>=0.19.3
+        # - pins <1,>=0.8.3
+        # - parsy <3,>=2
+        # - pandas <3,>=1.2.5
+        # - packaging <24,>=21.3
+        # - oracledb <3,>=1.3.1
+        # - numpy <2,>=1
+        # - multipledispatch <2,>=0.6
+        # - impyla <1,>=0.17
+        # - google-cloud-bigquery-storage <3,>=2
+        # - google-cloud-bigquery <4,>=3
+        # - geopandas <1,>=0.6
+        # - geoalchemy2 <1,>=0.6.3
+        # - deltalake <1,>=0.9.0
+        # - db-dtypes <2,>=0.3
+        # - datafusion <36,>=0.6
+        # - dask-core >=2022.9.1
+        # - clickhouse-connect <1,>=0.5.23
+        # - black <25,>=22.1.0
         # - bidict <1,>=0.22.1
         # - atpublic <5,>=2.3
     test:
