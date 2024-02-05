@@ -10,7 +10,7 @@ source:
   sha256: 20e74a0cdbd5fc03c96955fdb80ad4cc6d16518c28339e24a2b0f930bc40eeb6
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   host:
@@ -477,6 +477,41 @@ outputs:
       run:
         - {{ pin_subpackage(name + '-core') }}
         - sqlalchemy_exasol >=4.6.0
+        - sqlalchemy >=1.4,<3
+        - sqlalchemy-views <1,>=0.3.1
+
+    test:
+      imports:
+        - ibis
+        - ibis.backends.exasol
+
+  - name: ibis-flink
+    version: {{ version }}
+
+    build:
+      noarch: python
+
+    requirements:
+      run:
+        - {{ pin_subpackage(name + '-core') }}
+        - apache-flink
+
+    test:
+      imports:
+        - ibis
+        - ibis.backends.flink
+
+  - name: ibis-risingwave
+    version: {{ version }}
+
+    build:
+      noarch: python
+
+    requirements:
+      run:
+        - {{ pin_subpackage(name + '-core') }}
+        - psycopg2 >=2.8.4
+        - sqlalchemy-risingwave >=1.0.0
         - sqlalchemy >=1.4,<3
         - sqlalchemy-views <1,>=0.3.1
 
