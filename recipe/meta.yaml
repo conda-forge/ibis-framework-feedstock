@@ -168,6 +168,7 @@ outputs:
       run:
         - pyspark >=3
         - packaging >=21.3
+        - setuptools
         - {{ pin_subpackage(name + '-core') }}
 
     test:
