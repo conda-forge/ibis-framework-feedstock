@@ -10,7 +10,7 @@ source:
   sha256: 464c4f14febbc54625be80915df3b307bc0adc89b498ec2481b6c13358db321e
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   host:
@@ -23,7 +23,7 @@ outputs:
     build:
       noarch: python
       script:
-        - python -m pip install . -vv --no-deps
+        - find . -iname "snapshots" | xargs rm -r && python -m pip install . -vv --no-deps
       script_env:
         - POETRY_DYNAMIC_VERSIONING_BYPASS={{ version }}
 
