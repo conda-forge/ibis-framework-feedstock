@@ -10,7 +10,7 @@ source:
   sha256: b9612be4da0182a7b5526592d1e5155c92b3971073d03cad8bd7ee14bf015bb1
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   host:
@@ -256,7 +256,7 @@ outputs:
       run:
         - python-duckdb >=0.8.1
         - pins >=0.8.3
-        - fsspec <2024.3.0
+        - fsspec <2024.6.1
         - {{ pin_subpackage(name + '-core') }}
 
     test:
