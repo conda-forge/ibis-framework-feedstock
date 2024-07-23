@@ -1,5 +1,5 @@
 {% set name = "ibis-framework" %}
-{% set version = "9.1.0" %}
+{% set version = "9.2.0" %}
 
 package:
   name: {{ name }}-ext
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace("-", "_") }}-{{ version }}.tar.gz
-  sha256: b9612be4da0182a7b5526592d1e5155c92b3971073d03cad8bd7ee14bf015bb1
+  sha256: 9b5b7e0a4d269c67b451c9d8f0717c0dafa53c4abd3e0a048601ae0a7467bf8d
 
 build:
-  number: 2
+  number: 0
 
 requirements:
   host:
@@ -68,7 +68,7 @@ outputs:
       run:
         - python-duckdb <2,>=0.8.1
         - pins <1,>=0.8.3
-        - fsspec <2024.6.1
+        - fsspec <2024.6.2
         - {{ pin_subpackage(name + '-core', exact=True) }}
         # - typing_extensions <5,>=4.3.0
         # - trino-python-client <1,>=0.321
@@ -107,6 +107,45 @@ outputs:
         # - clickhouse-connect <1,>=0.5.23
         # - black <25,>=22.1.0
         # - bidict <1,>=0.22.1
+        # - atpublic <5,>=2.3
+        # - typing_extensions <5,>=4.3.0
+        # - trino-python-client <1,>=0.321
+        # - toolz <1,>=0.11
+        # - sqlglot <25.7,>=23.4
+        # - snowflake-connector-python !=3.3.0b1,<4,>=3.0.2
+        # - shapely <3,>=2
+        # - rich <14,>=12.4.4
+        # - regex >=2021.7.6
+        # - pytz >=2022.7
+        # - python-graphviz <1,>=0.16
+        # - python-dateutil <3,>=2.8.2
+        # - pyspark <4,>=3.3.3
+        # - pyproj <4,>=3.3.0
+        # - pyodbc <6,>=4.0.39
+        # - pymysql <2,>=1
+        # - pyexasol <1,>=0.25.2
+        # - pydruid <1,>=0.6.7
+        # - pydata-google-auth <2,>=1.4.0
+        # - pyarrow-hotfix <1,>=0.4
+        # - pyarrow <18,>=10.0.1
+        # - psycopg2 <3,>=2.8.4
+        # - polars <2,>=1
+        # - parsy <3,>=2
+        # - pandas <3,>=1.5.3
+        # - packaging <25,>=21.3
+        # - oracledb <3,>=1.3.1
+        # - numpy <3,>=1.23.2
+        # - impyla <1,>=0.17
+        # - google-cloud-bigquery-storage <3,>=2
+        # - google-cloud-bigquery <4,>=3
+        # - geopandas <2,>=0.6
+        # - geoarrow-types <1,>=0.2
+        # - deltalake <1,>=0.9.0
+        # - db-dtypes <2,>=0.3
+        # - datafusion <40,>=0.6
+        # - dask-core <2024.3.0,>=2022.9.1
+        # - clickhouse-connect <1,>=0.5.23
+        # - black <25,>=22.1.0
         # - atpublic <5,>=2.3
     test:
       imports:
