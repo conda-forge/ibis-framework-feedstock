@@ -407,9 +407,7 @@ outputs:
     requirements:
       run:
         - {{ pin_subpackage(name + '-core', exact=True) }}
-        - pydruid >=0.6.5
-        # we don't require sqlalchemy but pydruid inadvertently requires it
-        - sqlalchemy >=1.4
+        - pydruid >=0.6.7
 
     test:
       imports:
