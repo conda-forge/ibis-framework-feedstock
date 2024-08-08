@@ -1,5 +1,5 @@
 {% set name = "ibis-framework" %}
-{% set version = "9.2.0" %}
+{% set version = "9.3.0" %}
 
 package:
   name: {{ name }}-ext
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace("-", "_") }}-{{ version }}.tar.gz
-  sha256: 9b5b7e0a4d269c67b451c9d8f0717c0dafa53c4abd3e0a048601ae0a7467bf8d
+  sha256: 5e098318964d7ce53218ba9dcbf4b90d127ca3aea5fdf71661d03dc610d5df49
 
 build:
   number: 0
@@ -39,7 +39,7 @@ outputs:
         - bidict >=0.22.1
         - filelock >=3.7.0,<4
         - multipledispatch >=0.6,<2
-        - numpy >=1.23.2,<2
+        - numpy >=1.23.2,<3
         - pandas >=1.5.3
         - parsy >=2
         - pyarrow >=10.0.1
@@ -50,7 +50,7 @@ outputs:
         - rich >=12.4.4
         - pytz >=2022.7
         - python-dateutil >=2.8.2
-        - sqlglot >=23.4,<23.13
+        - sqlglot >=23.4,<25.10
         - toolz >=0.11
 
     test:
@@ -262,6 +262,7 @@ outputs:
     requirements:
       run:
         - regex >=2021.7.6
+        - packaging >=21.3
         - {{ pin_subpackage(name + '-core', exact=True) }}
 
     test:
@@ -493,7 +494,7 @@ about:
   license_family: Apache
   license_file: LICENSE.txt
   home: http://www.ibis-project.org
-  summary: Productivity-centric Python Big Data Framework
+  summary: The portable Python dataframe library
 
 extra:
   recipe-maintainers:
