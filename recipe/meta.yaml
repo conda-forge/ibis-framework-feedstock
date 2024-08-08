@@ -10,14 +10,14 @@ source:
   sha256: 5e098318964d7ce53218ba9dcbf4b90d127ca3aea5fdf71661d03dc610d5df49
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.9
+    - python >=3.10
 
 outputs:
-  - name: {{ name }}-core
+  - name: {{ name }}-lite
     version: {{ version }}
 
     build:
@@ -32,20 +32,12 @@ outputs:
         - pip
         - poetry-core >=1.0.0
         - poetry-dynamic-versioning >=0.18.0
-        - python >=3.9
+        - python >=3.10
 
       run:
         - atpublic >=2.3
-        - bidict >=0.22.1
-        - filelock >=3.7.0,<4
-        - multipledispatch >=0.6,<2
-        - numpy >=1.23.2,<3
-        - pandas >=1.5.3
         - parsy >=2
-        - pyarrow >=10.0.1
-        - pyarrow-hotfix >=0.4
-        - python >=3.9
-        - python-graphviz >=0.16
+        - python >=3.10
         - regex >=2021.7.6
         - rich >=12.4.4
         - pytz >=2022.7
@@ -56,8 +48,27 @@ outputs:
     test:
       imports:
         - ibis
-        - ibis.backends.pandas
 
+  - name: {{ name }}-core
+    version: {{ version }}
+
+    build:
+      noarch: python
+
+    requirements:
+      run:
+        - numpy >=1.23.2,<3
+        - pandas >=1.5.3
+        - pyarrow >=10.0.1
+        - pyarrow-hotfix >=0.4
+        - python-graphviz >=0.16
+        - {{ pin_subpackage(name + '-lite', exact=True) }}
+
+    test:
+      imports:
+        - ibis
+        - ibis.backends.pandas
+    
   - name: {{ name }}
     version: {{ version }}
 
@@ -69,7 +80,6 @@ outputs:
         - python-duckdb <2,>=0.8.1
         - pins <1,>=0.8.3
         - fsspec <2024.6.2
-        - {{ pin_subpackage(name + '-core', exact=True) }}
         # - typing_extensions <5,>=4.3.0
         # - trino-python-client <1,>=0.321
         # - toolz <1,>=0.11
