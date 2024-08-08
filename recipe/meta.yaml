@@ -54,6 +54,10 @@ outputs:
 
     build:
       noarch: python
+      script:
+        - find . -iname "snapshots" | xargs rm -r && python -m pip install . -vv --no-deps
+      script_env:
+        - POETRY_DYNAMIC_VERSIONING_BYPASS={{ version }}
 
     requirements:
       run:
