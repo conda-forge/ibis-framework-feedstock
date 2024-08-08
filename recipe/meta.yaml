@@ -17,7 +17,7 @@ requirements:
     - python >=3.10
 
 outputs:
-  - name: {{ name }}-lite
+  - name: {{ name }}-core
     version: {{ version }}
 
     build:
@@ -49,30 +49,7 @@ outputs:
       imports:
         - ibis
 
-  - name: {{ name }}-core
-    version: {{ version }}
 
-    build:
-      noarch: python
-      script:
-        - find . -iname "snapshots" | xargs rm -r && python -m pip install . -vv --no-deps
-      script_env:
-        - POETRY_DYNAMIC_VERSIONING_BYPASS={{ version }}
-
-    requirements:
-      run:
-        - numpy >=1.23.2,<3
-        - pandas >=1.5.3
-        - pyarrow >=10.0.1
-        - pyarrow-hotfix >=0.4
-        - python-graphviz >=0.16
-        - {{ pin_subpackage(name + '-lite', exact=True) }}
-
-    test:
-      imports:
-        - ibis
-        - ibis.backends.pandas
-    
   - name: {{ name }}
     version: {{ version }}
 
@@ -84,6 +61,11 @@ outputs:
         - python-duckdb <2,>=0.8.1
         - pins <1,>=0.8.3
         - fsspec <2024.6.2
+        - numpy >=1.23.2,<3
+        - pandas >=1.5.3
+        - pyarrow >=10.0.1
+        - pyarrow-hotfix >=0.4
+        - python-graphviz >=0.16
         # - typing_extensions <5,>=4.3.0
         # - trino-python-client <1,>=0.321
         # - toolz <1,>=0.11
@@ -177,6 +159,11 @@ outputs:
       run:
         - clickhouse-connect >=0.5.23
         - {{ pin_subpackage(name + '-core', exact=True) }}
+        - numpy >=1.23.2,<3
+        - pandas >=1.5.3
+        - pyarrow >=10.0.1
+        - pyarrow-hotfix >=0.4
+        - python-graphviz >=0.16
 
     test:
       imports:
@@ -194,6 +181,11 @@ outputs:
       run:
         - impyla >=0.17
         - {{ pin_subpackage(name + '-core', exact=True) }}
+        - numpy >=1.23.2,<3
+        - pandas >=1.5.3
+        - pyarrow >=10.0.1
+        - pyarrow-hotfix >=0.4
+        - python-graphviz >=0.16
 
     test:
       imports:
@@ -210,6 +202,11 @@ outputs:
       run:
         - pymysql >=1
         - {{ pin_subpackage(name + '-core', exact=True) }}
+        - numpy >=1.23.2,<3
+        - pandas >=1.5.3
+        - pyarrow >=10.0.1
+        - pyarrow-hotfix >=0.4
+        - python-graphviz >=0.16
 
     test:
       imports:
@@ -226,6 +223,11 @@ outputs:
       run:
         - psycopg2 >=2.8.4
         - {{ pin_subpackage(name + '-core', exact=True) }}
+        - numpy >=1.23.2,<3
+        - pandas >=1.5.3
+        - pyarrow >=10.0.1
+        - pyarrow-hotfix >=0.4
+        - python-graphviz >=0.16
 
     test:
       imports:
@@ -244,6 +246,11 @@ outputs:
         - packaging >=21.3
         - setuptools
         - {{ pin_subpackage(name + '-core', exact=True) }}
+        - numpy >=1.23.2,<3
+        - pandas >=1.5.3
+        - pyarrow >=10.0.1
+        - pyarrow-hotfix >=0.4
+        - python-graphviz >=0.16
 
     test:
       imports:
@@ -261,6 +268,11 @@ outputs:
         - regex >=2021.7.6
         - packaging >=21.3
         - {{ pin_subpackage(name + '-core', exact=True) }}
+        - numpy >=1.23.2,<3
+        - pandas >=1.5.3
+        - pyarrow >=10.0.1
+        - pyarrow-hotfix >=0.4
+        - python-graphviz >=0.16
 
     test:
       imports:
@@ -277,6 +289,11 @@ outputs:
       run:
         - datafusion >=0.6
         - {{ pin_subpackage(name + '-core', exact=True) }}
+        - numpy >=1.23.2,<3
+        - pandas >=1.5.3
+        - pyarrow >=10.0.1
+        - pyarrow-hotfix >=0.4
+        - python-graphviz >=0.16
 
     test:
       imports:
@@ -295,6 +312,11 @@ outputs:
         - pins >=0.8.3
         - fsspec <2024.6.2
         - {{ pin_subpackage(name + '-core', exact=True) }}
+        - numpy >=1.23.2,<3
+        - pandas >=1.5.3
+        - pyarrow >=10.0.1
+        - pyarrow-hotfix >=0.4
+        - python-graphviz >=0.16
 
     test:
       imports:
@@ -311,6 +333,11 @@ outputs:
       run:
         - python-duckdb >=0.8.1
         - {{ pin_subpackage(name + '-core', exact=True) }}
+        - numpy >=1.23.2,<3
+        - pandas >=1.5.3
+        - pyarrow >=10.0.1
+        - pyarrow-hotfix >=0.4
+        - python-graphviz >=0.16
 
     test:
       imports:
@@ -327,6 +354,11 @@ outputs:
       run:
         - pyodbc >=4.0.39
         - {{ pin_subpackage(name + '-core', exact=True) }}
+        - numpy >=1.23.2,<3
+        - pandas >=1.5.3
+        - pyarrow >=10.0.1
+        - pyarrow-hotfix >=0.4
+        - python-graphviz >=0.16
 
     test:
       imports:
@@ -347,6 +379,11 @@ outputs:
         - google-cloud-bigquery-storage >=2,<3
         - pydata-google-auth >=1.4.0
         - {{ pin_subpackage(name + '-core', exact=True) }}
+        - numpy >=1.23.2,<3
+        - pandas >=1.5.3
+        - pyarrow >=10.0.1
+        - pyarrow-hotfix >=0.4
+        - python-graphviz >=0.16
 
     test:
       imports:
@@ -363,6 +400,11 @@ outputs:
       run:
         - trino-python-client >=0.321
         - {{ pin_subpackage(name + '-core', exact=True) }}
+        - numpy >=1.23.2,<3
+        - pandas >=1.5.3
+        - pyarrow >=10.0.1
+        - pyarrow-hotfix >=0.4
+        - python-graphviz >=0.16
 
     test:
       imports:
@@ -379,6 +421,11 @@ outputs:
       run:
         - snowflake-connector-python >=3.0.2
         - {{ pin_subpackage(name + '-core', exact=True) }}
+        - numpy >=1.23.2,<3
+        - pandas >=1.5.3
+        - pyarrow >=10.0.1
+        - pyarrow-hotfix >=0.4
+        - python-graphviz >=0.16
 
     test:
       imports:
@@ -396,6 +443,11 @@ outputs:
         - {{ pin_subpackage(name + '-core', exact=True) }}
         - packaging >=21.3
         - polars >=1
+        - numpy >=1.23.2,<3
+        - pandas >=1.5.3
+        - pyarrow >=10.0.1
+        - pyarrow-hotfix >=0.4
+        - python-graphviz >=0.16
 
     test:
       imports:
@@ -412,6 +464,11 @@ outputs:
       run:
         - {{ pin_subpackage(name + '-core', exact=True) }}
         - pydruid >=0.6.7
+        - numpy >=1.23.2,<3
+        - pandas >=1.5.3
+        - pyarrow >=10.0.1
+        - pyarrow-hotfix >=0.4
+        - python-graphviz >=0.16
 
     test:
       imports:
@@ -429,6 +486,11 @@ outputs:
         - {{ pin_subpackage(name + '-core', exact=True) }}
         - oracledb >=1.3.1
         - packaging >=21.3
+        - numpy >=1.23.2,<3
+        - pandas >=1.5.3
+        - pyarrow >=10.0.1
+        - pyarrow-hotfix >=0.4
+        - python-graphviz >=0.16
 
     test:
       imports:
@@ -445,6 +507,11 @@ outputs:
       run:
         - {{ pin_subpackage(name + '-core', exact=True) }}
         - pyexasol >=0.25.2
+        - numpy >=1.23.2,<3
+        - pandas >=1.5.3
+        - pyarrow >=10.0.1
+        - pyarrow-hotfix >=0.4
+        - python-graphviz >=0.16
 
     test:
       imports:
@@ -461,6 +528,11 @@ outputs:
       run:
         - {{ pin_subpackage(name + '-core', exact=True) }}
         - apache-flink
+        - numpy >=1.23.2,<3
+        - pandas >=1.5.3
+        - pyarrow >=10.0.1
+        - pyarrow-hotfix >=0.4
+        - python-graphviz >=0.16
 
     test:
       imports:
@@ -477,6 +549,11 @@ outputs:
       run:
         - {{ pin_subpackage(name + '-core', exact=True) }}
         - psycopg2 >=2.8.4
+        - numpy >=1.23.2,<3
+        - pandas >=1.5.3
+        - pyarrow >=10.0.1
+        - pyarrow-hotfix >=0.4
+        - python-graphviz >=0.16
 
     test:
       imports:
