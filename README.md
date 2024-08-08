@@ -7,7 +7,7 @@ Home: http://www.ibis-project.org
 
 Package license: Apache-2.0
 
-Summary: Productivity-centric Python Big Data Framework
+Summary: The portable Python dataframe library
 
 Current build status
 ====================
