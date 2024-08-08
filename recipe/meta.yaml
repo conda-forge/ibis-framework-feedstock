@@ -236,7 +236,7 @@ outputs:
 
     requirements:
       run:
-        - pyspark >=3
+        - pyspark >=3.3.3
         - packaging >=21.3
         - setuptools
         - {{ pin_subpackage(name + '-core', exact=True) }}
