@@ -391,7 +391,7 @@ outputs:
       run:
         - {{ pin_subpackage(name + '-core', exact=True) }}
         - packaging >=21.3
-        - polars >=0.20.17
+        - polars >=1
 
     test:
       imports:
