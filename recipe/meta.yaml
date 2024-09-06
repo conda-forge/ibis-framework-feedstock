@@ -1,5 +1,5 @@
 {% set name = "ibis-framework" %}
-{% set version = "9.3.0" %}
+{% set version = "9.4.0" %}
 
 package:
   name: {{ name }}-ext
@@ -50,8 +50,9 @@ outputs:
         - rich >=12.4.4
         - pytz >=2022.7
         - python-dateutil >=2.8.2
-        - sqlglot >=23.4,<25.10
+        - sqlglot >=23.4,<25.19
         - toolz >=0.11
+        - typing-extensions >=4.3.0
 
     test:
       imports:
@@ -68,7 +69,7 @@ outputs:
       run:
         - python-duckdb <2,>=0.8.1
         - pins <1,>=0.8.3
-        - fsspec <2024.6.2
+        - fsspec <2024.9.1
         - {{ pin_subpackage(name + '-core', exact=True) }}
         # - typing_extensions <5,>=4.3.0
         # - trino-python-client <1,>=0.321
@@ -296,7 +297,7 @@ outputs:
       run:
         - python-duckdb >=0.8.1
         - pins >=0.8.3
-        - fsspec <2024.6.1
+        - fsspec <2024.9.1
         - {{ pin_subpackage(name + '-core', exact=True) }}
 
     test:
