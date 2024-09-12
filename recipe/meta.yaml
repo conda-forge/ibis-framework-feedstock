@@ -40,7 +40,8 @@ outputs:
         - filelock >=3.7.0,<4
         - multipledispatch >=0.6,<2
         - numpy >=1.23.2,<3
-        - pandas >=1.5.3
+        - packaging >=21.3
+        - pandas >=1.5.3,<3
         - parsy >=2
         - pyarrow >=10.0.1
         - pyarrow-hotfix >=0.4
@@ -50,8 +51,8 @@ outputs:
         - rich >=12.4.4
         - pytz >=2022.7
         - python-dateutil >=2.8.2
-        - sqlglot >=23.4,<25.19
-        - toolz >=0.11
+        - sqlglot >=23.4,<25.21
+        - toolz >=0.11,<1
         - typing-extensions >=4.3.0
 
     test:
@@ -209,24 +210,6 @@ outputs:
         - ibis
         - ibis.backends.clickhouse
 
-  # - name: ibis-dask
-  #   version: {{ version }}
-
-  #   build:
-  #     noarch: python
-
-  #   requirements:
-  #     run:
-  #       - dask >=2022.9.1,<2024.3.0
-  #       - packaging >=21.3
-  #       - regex >=2021.7.6
-  #       - {{ pin_subpackage(name + '-core') }}
-
-  #   test:
-  #     imports:
-  #       - ibis
-  #       - ibis.backends.dask
-
   - name: ibis-impala
     version: {{ version }}
 
@@ -283,8 +266,7 @@ outputs:
 
     requirements:
       run:
-        - pyspark >=3
-        - packaging >=21.3
+        - pyspark >=3.3.3
         - setuptools
         - {{ pin_subpackage(name + '-core', exact=True) }}
 
@@ -302,7 +284,6 @@ outputs:
     requirements:
       run:
         - regex >=2021.7.6
-        - packaging >=21.3
         - {{ pin_subpackage(name + '-core', exact=True) }}
 
     test:
@@ -437,8 +418,7 @@ outputs:
     requirements:
       run:
         - {{ pin_subpackage(name + '-core', exact=True) }}
-        - packaging >=21.3
-        - polars >=0.20.17
+        - polars >=1
 
     test:
       imports:
@@ -454,9 +434,7 @@ outputs:
     requirements:
       run:
         - {{ pin_subpackage(name + '-core', exact=True) }}
-        - pydruid >=0.6.5
-        # we don't require sqlalchemy but pydruid inadvertently requires it
-        - sqlalchemy >=1.4
+        - pydruid >=0.6.7
 
     test:
       imports:
@@ -473,7 +451,6 @@ outputs:
       run:
         - {{ pin_subpackage(name + '-core', exact=True) }}
         - oracledb >=1.3.1
-        - packaging >=21.3
 
     test:
       imports:
