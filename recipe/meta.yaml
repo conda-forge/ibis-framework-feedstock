@@ -57,8 +57,7 @@ outputs:
         - python {{ python_min }}
       imports:
         - ibis
-      commands:
-        - pip check
+
 
   - name: {{ name }}
     version: {{ version }}
@@ -82,8 +81,7 @@ outputs:
       imports:
         - ibis
         - ibis.backends.duckdb
-      commands:
-        - pip check
+
 
   - name: ibis-clickhouse
     version: {{ version }}
@@ -105,8 +103,7 @@ outputs:
       imports:
         - ibis
         - ibis.backends.clickhouse
-      commands:
-        - pip check
+
 
   - name: ibis-impala
     version: {{ version }}
@@ -128,8 +125,7 @@ outputs:
       imports:
         - ibis
         - ibis.backends.impala
-      commands:
-        - pip check
+
 
   - name: ibis-mysql
     version: {{ version }}
@@ -151,8 +147,7 @@ outputs:
       imports:
         - ibis
         - ibis.backends.mysql
-      commands:
-        - pip check
+
 
   - name: ibis-postgres
     version: {{ version }}
@@ -174,8 +169,7 @@ outputs:
       imports:
         - ibis
         - ibis.backends.postgres
-      commands:
-        - pip check
+
 
   - name: ibis-pyspark
     version: {{ version }}
@@ -198,8 +192,7 @@ outputs:
       imports:
         - ibis
         - ibis.backends.pyspark
-      commands:
-        - pip check
+
 
   - name: ibis-sqlite
     version: {{ version }}
@@ -221,8 +214,7 @@ outputs:
       imports:
         - ibis
         - ibis.backends.sqlite
-      commands:
-        - pip check
+
 
   - name: ibis-datafusion
     version: {{ version }}
@@ -244,8 +236,7 @@ outputs:
       imports:
         - ibis
         - ibis.backends.datafusion
-      commands:
-        - pip check
+
 
   - name: ibis-duckdb
     version: {{ version }}
@@ -269,8 +260,7 @@ outputs:
       imports:
         - ibis
         - ibis.backends.duckdb
-      commands:
-        - pip check
+
 
   - name: ibis-mssql
     version: {{ version }}
@@ -292,8 +282,7 @@ outputs:
       imports:
         - ibis
         - ibis.backends.mssql
-      commands:
-        - pip check
+
 
   - name: ibis-bigquery
     version: {{ version }}
@@ -318,9 +307,8 @@ outputs:
       imports:
         - ibis
         - ibis.backends.bigquery
-      commands:
-        - pip check
 
+ 
   - name: ibis-trino
     version: {{ version }}
 
@@ -341,8 +329,7 @@ outputs:
       imports:
         - ibis
         - ibis.backends.trino
-      commands:
-        - pip check
+
 
   - name: ibis-snowflake
     version: {{ version }}
@@ -364,8 +351,7 @@ outputs:
       imports:
         - ibis
         - ibis.backends.snowflake
-      commands:
-        - pip check
+
 
   - name: ibis-polars
     version: {{ version }}
@@ -387,8 +373,7 @@ outputs:
       imports:
         - ibis
         - ibis.backends.polars
-      commands:
-        - pip check
+
 
   - name: ibis-druid
     version: {{ version }}
@@ -410,8 +395,7 @@ outputs:
       imports:
         - ibis
         - ibis.backends.druid
-      commands:
-        - pip check
+
 
   - name: ibis-oracle
     version: {{ version }}
@@ -433,8 +417,7 @@ outputs:
       imports:
         - ibis
         - ibis.backends.oracle
-      commands:
-        - pip check
+
 
   - name: ibis-exasol
     version: {{ version }}
@@ -456,8 +439,7 @@ outputs:
       imports:
         - ibis
         - ibis.backends.exasol
-      commands:
-        - pip check
+
 
   - name: ibis-flink
     version: {{ version }}
@@ -481,8 +463,7 @@ outputs:
       imports:
         - ibis
         - ibis.backends.flink
-      commands:
-        - pip check
+
 
   - name: ibis-risingwave
     version: {{ version }}
@@ -504,8 +485,7 @@ outputs:
       imports:
         - ibis
         - ibis.backends.risingwave
-      commands:
-        - pip check
+
 
 about:
   license: Apache-2.0
