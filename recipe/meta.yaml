@@ -54,9 +54,12 @@ outputs:
 
     test:
       requires:
+        - pip
         - python {{ python_min }}
       imports:
         - ibis
+      commands:
+        - pip check
 
 
   - name: {{ name }}
@@ -78,9 +81,12 @@ outputs:
     test:
       requires:
         - python {{ python_min }}
+        - pip
       imports:
         - ibis
         - ibis.backends.duckdb
+      commands:
+        - pip check
 
 
   - name: ibis-clickhouse
