@@ -54,8 +54,8 @@ outputs:
 
     test:
       requires:
-        - pip
         - python {{ python_min }}
+        - pip
       imports:
         - ibis
       commands:
@@ -81,6 +81,7 @@ outputs:
     test:
       requires:
         - python {{ python_min }}
+        - pip
       imports:
         - ibis
         - ibis.backends.duckdb
@@ -105,6 +106,7 @@ outputs:
     test:
       requires:
         - python {{ python_min }}
+        - pip
       imports:
         - ibis
         - ibis.backends.clickhouse
@@ -129,6 +131,7 @@ outputs:
     test:
       requires:
         - python {{ python_min }}
+        - pip
       imports:
         - ibis
         - ibis.backends.impala
@@ -153,6 +156,7 @@ outputs:
     test:
       requires:
         - python {{ python_min }}
+        - pip
       imports:
         - ibis
         - ibis.backends.mysql
@@ -177,6 +181,7 @@ outputs:
     test:
       requires:
         - python {{ python_min }}
+        - pip
       imports:
         - ibis
         - ibis.backends.postgres
@@ -202,6 +207,7 @@ outputs:
     test:
       requires:
         - python {{ python_min }}
+        - pip
       imports:
         - ibis
         - ibis.backends.pyspark
@@ -226,6 +232,7 @@ outputs:
     test:
       requires:
         - python {{ python_min }}
+        - pip
       imports:
         - ibis
         - ibis.backends.sqlite
@@ -250,6 +257,7 @@ outputs:
     test:
       requires:
         - python {{ python_min }}
+        - pip
       imports:
         - ibis
         - ibis.backends.datafusion
@@ -276,6 +284,7 @@ outputs:
     test:
       requires:
         - python {{ python_min }}
+        - pip
       imports:
         - ibis
         - ibis.backends.duckdb
@@ -300,6 +309,7 @@ outputs:
     test:
       requires:
         - python {{ python_min }}
+        - pip
       imports:
         - ibis
         - ibis.backends.mssql
@@ -327,6 +337,7 @@ outputs:
     test:
       requires:
         - python {{ python_min }}
+        - pip
       imports:
         - ibis
         - ibis.backends.bigquery
@@ -351,6 +362,7 @@ outputs:
     test:
       requires:
         - python {{ python_min }}
+        - pip
       imports:
         - ibis
         - ibis.backends.trino
@@ -375,6 +387,7 @@ outputs:
     test:
       requires:
         - python {{ python_min }}
+        - pip
       imports:
         - ibis
         - ibis.backends.snowflake
@@ -399,6 +412,7 @@ outputs:
     test:
       requires:
         - python {{ python_min }}
+        - pip
       imports:
         - ibis
         - ibis.backends.polars
@@ -423,6 +437,7 @@ outputs:
     test:
       requires:
         - python {{ python_min }}
+        - pip
       imports:
         - ibis
         - ibis.backends.druid
@@ -447,6 +462,7 @@ outputs:
     test:
       requires:
         - python {{ python_min }}
+        - pip
       imports:
         - ibis
         - ibis.backends.oracle
@@ -471,6 +487,7 @@ outputs:
     test:
       requires:
         - python {{ python_min }}
+        - pip
       imports:
         - ibis
         - ibis.backends.exasol
@@ -498,6 +515,7 @@ outputs:
     test:
       requires:
         - python {{ python_min }}
+        - pip
       imports:
         - ibis
         - ibis.backends.flink
@@ -522,6 +540,7 @@ outputs:
     test:
       requires:
         - python {{ python_min }}
+        - pip
       imports:
         - ibis
         - ibis.backends.risingwave
