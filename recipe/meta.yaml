@@ -140,7 +140,7 @@ outputs:
 
     requirements:
       run:
-        - psycopg-binary >=3.2.0,<4
+        - psycopg >=3.2.0,<4
         - {{ pin_subpackage(name + '-core', exact=True) }}
 
     test:
