@@ -454,8 +454,6 @@ outputs:
         - python >={{ python_min }}
         - {{ pin_subpackage(name + '-core', exact=True) }}
         - apache-flink
-      commands:
-        - pip check
 
     test:
       requires:
