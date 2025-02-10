@@ -81,7 +81,6 @@ outputs:
     test:
       requires:
         - python {{ python_min }}
-        - pip
       imports:
         - ibis
         - ibis.backends.duckdb
@@ -109,6 +108,8 @@ outputs:
       imports:
         - ibis
         - ibis.backends.clickhouse
+      commands:
+        - pip check
 
 
   - name: ibis-impala
@@ -131,6 +132,8 @@ outputs:
       imports:
         - ibis
         - ibis.backends.impala
+      commands:
+        - pip check
 
 
   - name: ibis-mysql
@@ -153,6 +156,8 @@ outputs:
       imports:
         - ibis
         - ibis.backends.mysql
+      commands:
+        - pip check
 
 
   - name: ibis-postgres
@@ -175,6 +180,8 @@ outputs:
       imports:
         - ibis
         - ibis.backends.postgres
+      commands:
+        - pip check
 
 
   - name: ibis-pyspark
@@ -198,6 +205,8 @@ outputs:
       imports:
         - ibis
         - ibis.backends.pyspark
+      commands:
+        - pip check
 
 
   - name: ibis-sqlite
@@ -220,6 +229,8 @@ outputs:
       imports:
         - ibis
         - ibis.backends.sqlite
+      commands:
+        - pip check
 
 
   - name: ibis-datafusion
@@ -242,6 +253,8 @@ outputs:
       imports:
         - ibis
         - ibis.backends.datafusion
+      commands:
+        - pip check
 
 
   - name: ibis-duckdb
@@ -266,6 +279,8 @@ outputs:
       imports:
         - ibis
         - ibis.backends.duckdb
+      commands:
+        - pip check
 
 
   - name: ibis-mssql
@@ -288,6 +303,8 @@ outputs:
       imports:
         - ibis
         - ibis.backends.mssql
+      commands:
+        - pip check
 
 
   - name: ibis-bigquery
@@ -313,8 +330,10 @@ outputs:
       imports:
         - ibis
         - ibis.backends.bigquery
+      commands:
+        - pip check
 
- 
+
   - name: ibis-trino
     version: {{ version }}
 
@@ -335,6 +354,8 @@ outputs:
       imports:
         - ibis
         - ibis.backends.trino
+      commands:
+        - pip check
 
 
   - name: ibis-snowflake
@@ -357,6 +378,8 @@ outputs:
       imports:
         - ibis
         - ibis.backends.snowflake
+      commands:
+        - pip check
 
 
   - name: ibis-polars
@@ -379,6 +402,8 @@ outputs:
       imports:
         - ibis
         - ibis.backends.polars
+      commands:
+        - pip check
 
 
   - name: ibis-druid
@@ -401,6 +426,8 @@ outputs:
       imports:
         - ibis
         - ibis.backends.druid
+      commands:
+        - pip check
 
 
   - name: ibis-oracle
@@ -423,6 +450,8 @@ outputs:
       imports:
         - ibis
         - ibis.backends.oracle
+      commands:
+        - pip check
 
 
   - name: ibis-exasol
@@ -445,6 +474,8 @@ outputs:
       imports:
         - ibis
         - ibis.backends.exasol
+      commands:
+        - pip check
 
 
   - name: ibis-flink
@@ -460,6 +491,9 @@ outputs:
         - python >={{ python_min }}
         - {{ pin_subpackage(name + '-core', exact=True) }}
         - apache-flink
+      commands:
+        - pip check
+
 
     test:
       requires:
@@ -467,6 +501,8 @@ outputs:
       imports:
         - ibis
         - ibis.backends.flink
+      commands:
+        - pip check
 
 
   - name: ibis-risingwave
@@ -489,6 +525,8 @@ outputs:
       imports:
         - ibis
         - ibis.backends.risingwave
+      commands:
+        - pip check
 
 
 about:
