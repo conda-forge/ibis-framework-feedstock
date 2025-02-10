@@ -54,6 +54,7 @@ outputs:
 
     test:
       requires:
+        - pip
         - python {{ python_min }}
       imports:
         - ibis
@@ -78,6 +79,7 @@ outputs:
 
     test:
       requires:
+        - pip
         - python {{ python_min }}
       imports:
         - ibis
@@ -101,6 +103,7 @@ outputs:
 
     test:
       requires:
+        - pip
         - python {{ python_min }}
       imports:
         - ibis
@@ -124,6 +127,7 @@ outputs:
 
     test:
       requires:
+        - pip
         - python {{ python_min }}
       imports:
         - ibis
@@ -147,6 +151,7 @@ outputs:
 
     test:
       requires:
+        - pip
         - python {{ python_min }}
       imports:
         - ibis
@@ -170,6 +175,7 @@ outputs:
 
     test:
       requires:
+        - pip
         - python {{ python_min }}
       imports:
         - ibis
@@ -194,6 +200,7 @@ outputs:
 
     test:
       requires:
+        - pip
         - python {{ python_min }}
       imports:
         - ibis
@@ -217,6 +224,7 @@ outputs:
 
     test:
       requires:
+        - pip
         - python {{ python_min }}
       imports:
         - ibis
@@ -240,6 +248,7 @@ outputs:
 
     test:
       requires:
+        - pip
         - python {{ python_min }}
       imports:
         - ibis
@@ -265,6 +274,7 @@ outputs:
 
     test:
       requires:
+        - pip
         - python {{ python_min }}
       imports:
         - ibis
@@ -288,6 +298,7 @@ outputs:
 
     test:
       requires:
+        - pip
         - python {{ python_min }}
       imports:
         - ibis
@@ -314,6 +325,7 @@ outputs:
 
     test:
       requires:
+        - pip
         - python {{ python_min }}
       imports:
         - ibis
@@ -337,6 +349,7 @@ outputs:
 
     test:
       requires:
+        - pip
         - python {{ python_min }}
       imports:
         - ibis
@@ -360,6 +373,7 @@ outputs:
 
     test:
       requires:
+        - pip
         - python {{ python_min }}
       imports:
         - ibis
@@ -383,6 +397,7 @@ outputs:
 
     test:
       requires:
+        - pip
         - python {{ python_min }}
       imports:
         - ibis
@@ -406,6 +421,7 @@ outputs:
 
     test:
       requires:
+        - pip
         - python {{ python_min }}
       imports:
         - ibis
@@ -429,6 +445,7 @@ outputs:
 
     test:
       requires:
+        - pip
         - python {{ python_min }}
       imports:
         - ibis
@@ -452,6 +469,7 @@ outputs:
 
     test:
       requires:
+        - pip
         - python {{ python_min }}
       imports:
         - ibis
@@ -477,6 +495,7 @@ outputs:
 
     test:
       requires:
+        - pip
         - python {{ python_min }}
       imports:
         - ibis
@@ -500,6 +519,7 @@ outputs:
 
     test:
       requires:
+        - pip
         - python {{ python_min }}
       imports:
         - ibis
