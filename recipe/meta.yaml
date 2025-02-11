@@ -588,7 +588,7 @@ outputs:
       run:
         - python >={{ python_min }}
         - {{ pin_subpackage(name + '-core', exact=True) }}
-        - databricks-sql-connector-core >=4,<5
+        - databricks-sql-connector >=4,<5
 
     test:
       requires:
