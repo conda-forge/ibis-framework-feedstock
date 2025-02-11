@@ -568,7 +568,7 @@ outputs:
         - pip
       imports:
         - ibis
-        - ibis.backends.trino
+        - ibis.backends.athena
       commands:
         - pip check
 
@@ -592,7 +592,7 @@ outputs:
         - pip
       imports:
         - ibis
-        - ibis.backends.trino
+        - ibis.backends.databricks
       commands:
         - pip check
 
