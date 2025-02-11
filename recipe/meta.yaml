@@ -547,6 +547,54 @@ outputs:
       commands:
         - pip check
 
+  - name: ibis-athena
+    version: {{ version }}
+
+    build:
+      noarch: python
+
+    requirements:
+      host:
+        - python {{ python_min }}
+      run:
+        - python >={{ python_min }}
+        - {{ pin_subpackage(name + '-core', exact=True) }}
+        - pyathena
+        - s3fs
+
+    test:
+      requires:
+        - python {{ python_min }}
+        - pip
+      imports:
+        - ibis
+        - ibis.backends.trino
+      commands:
+        - pip check
+
+  - name: ibis-databricks
+    version: {{ version }}
+
+    build:
+      noarch: python
+
+    requirements:
+      host:
+        - python {{ python_min }}
+      run:
+        - python >={{ python_min }}
+        - {{ pin_subpackage(name + '-core', exact=True) }}
+        - databricks-sql-connector
+
+    test:
+      requires:
+        - python {{ python_min }}
+        - pip
+      imports:
+        - ibis
+        - ibis.backends.trino
+      commands:
+        - pip check
 
 about:
   license: Apache-2.0
