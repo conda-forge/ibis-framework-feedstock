@@ -1,5 +1,5 @@
 {% set name = "ibis-framework" %}
-{% set version = "10.1.0" %}
+{% set version = "10.2.0" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace("-", "_") }}-{{ version }}.tar.gz
-  sha256: c8e0b074504fcc5bf02635502677ea864cecc6975168eb0f1e290036b79edaea
+  sha256: fc7a0698cd057eaab094d68c59f71810df9c3521b456065bedadc3507ec433f4
 
 build:
   number: 0
@@ -101,6 +101,48 @@ outputs:
         # - psycopg >=3.2.0
         # - polars >=1
         # - parsy >=2
+        # - pandas <3,>=1.5.3
+        # - packaging >=21.3
+        # - oracledb >=1.3.1
+        # - numpy <3,>=1.23.2
+        # - mysqlclient >=2.2.4
+        # - impyla >=0.17
+        # - google-cloud-bigquery-storage >=2
+        # - google-cloud-bigquery >=3
+        # - geopandas >=0.6
+        # - geoarrow-types >=0.2
+        # - deltalake >=0.9.0
+        # - db-dtypes >=0.3
+        # - datafusion >=0.6
+        # - databricks-sql-connector-core >=4
+        # - clickhouse-connect >=0.5.23
+        # - black >=22.1.0
+        # - atpublic >=2.3
+        # - typing_extensions >=4.3.0
+        # - trino-python-client >=0.321
+        # - toolz >=0.11
+        # - sqlglot >=23.4
+        # - snowflake-connector-python !=3.3.0b1,>=3.0.2
+        # - shapely >=2
+        # - rich >=12.4.4
+        # - regex >=2021.7.6
+        # - pytz >=2022.7
+        # - python-graphviz >=0.16
+        # - python-dateutil >=2.8.2
+        # - pyspark >=3.3.3
+        # - pyproj >=3.3.0
+        # - pyodbc >=4.0.39
+        # - pyexasol >=0.25.2
+        # - pydruid >=0.6.7
+        # - pydata-google-auth >=1.4.0
+        # - pyathena >=3.11.0
+        # - pyarrow-hotfix >=0.4
+        # - pyarrow >=10.0.1
+        # - psycopg2 >=2.8.4
+        # - psycopg >=3.2.0
+        # - polars >=1
+        # - parsy >=2
+        # - pandas-gbq >=0.26.1
         # - pandas <3,>=1.5.3
         # - packaging >=21.3
         # - oracledb >=1.3.1
