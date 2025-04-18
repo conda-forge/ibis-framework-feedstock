@@ -11,7 +11,7 @@ source:
   sha256: 41255c66ed4ed1108f39e09da47759678903c6670980d39d1a815f1db47d66ca
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   host:
@@ -45,7 +45,7 @@ outputs:
         - python >={{ python_min }}
         - python-graphviz >=0.16
         - regex >=2021.7.6
-        - rich >=12.4.4,<14
+        - rich >=12.4.4
         - pytz >=2022.7
         - python-dateutil >=2.8.2
         - sqlglot >=23.4,<26.4
