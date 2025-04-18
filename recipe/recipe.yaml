@@ -5,21 +5,19 @@ context:
   name: ibis-framework
   version: 10.4.0
   python_min: 3.10
+  python_max: 4.0
+  python_test_max: 3.13
 
 recipe:
   name: ${{ name }}-ext
   version: ${{ version }}
 
 source:
-  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/ibis-framework}-${{ version }}.tar.gz
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name | replace("-", "_") }}-${{ version }}.tar.gz
   sha256: 41255c66ed4ed1108f39e09da47759678903c6670980d39d1a815f1db47d66ca
 
 build:
   number: 2
-
-requirements:
-  host:
-    - python ${{ python_min }}.*
 
 outputs:
   - package:
@@ -33,9 +31,9 @@ outputs:
       host:
         - pip
         - hatchling
-        - python 3.10.*
+        - python ${{ python_min }}.*
       run:
-        - python >=${{ python_min }}
+        - python >=${{ python_min }},<${{ python_max }}
         - atpublic >=2.3
         - bidict >=0.22.1
         - filelock >=3.7.0,<4
@@ -58,6 +56,14 @@ outputs:
           imports:
             - ibis
           pip_check: true
+          python_version:
+          - ${{ python_min }}.*
+          - ${{ python_test_max }}.*
+      - requirements:
+          run:
+            - pip
+            - python ${{ python_min }}.*
+        script: pip check
   - package:
       name: ${{ name }}
       version: ${{ version }}
@@ -65,20 +71,26 @@ outputs:
       noarch: python
     requirements:
       host:
-        - python 3.10.*
+        - python ${{ python_min }}.*
       run:
         - python >=${{ python_min }}
         - ${{ pin_subpackage(name + '-core', exact=True) }}
         - python-duckdb >=0.10.3
         - pins >=0.8.3
         - fsspec
-
     tests:
       - python:
           imports:
             - ibis
             - ibis.backends.duckdb
           pip_check: true
+          python_version:
+          - ${{ python_min }}.*
+      - requirements:
+          run:
+            - pip
+            - python ${{ python_min }}.*
+        script: pip check
   - package:
       name: ibis-clickhouse
       version: ${{ version }}
@@ -86,7 +98,7 @@ outputs:
       noarch: python
     requirements:
       host:
-        - python 3.10.*
+        - python ${{ python_min }}.*
       run:
         - python >=${{ python_min }}
         - ${{ pin_subpackage(name + '-core', exact=True) }}
@@ -97,6 +109,13 @@ outputs:
             - ibis
             - ibis.backends.clickhouse
           pip_check: true
+          python_version:
+          - ${{ python_min }}.*
+      - requirements:
+          run:
+            - pip
+            - python ${{ python_min }}.*
+        script: pip check
   - package:
       name: ibis-impala
       version: ${{ version }}
@@ -104,7 +123,7 @@ outputs:
       noarch: python
     requirements:
       host:
-        - python 3.10.*
+        - python ${{ python_min }}.*
       run:
         - python >=${{ python_min }}
         - ${{ pin_subpackage(name + '-core', exact=True) }}
@@ -115,6 +134,13 @@ outputs:
             - ibis
             - ibis.backends.impala
           pip_check: true
+          python_version:
+          - ${{ python_min }}.*
+      - requirements:
+          run:
+            - pip
+            - python ${{ python_min }}.*
+        script: pip check
   - package:
       name: ibis-mysql
       version: ${{ version }}
@@ -122,7 +148,7 @@ outputs:
       noarch: python
     requirements:
       host:
-        - python 3.10.*
+        - python ${{ python_min }}.*
       run:
         - python >=${{ python_min }}
         - ${{ pin_subpackage(name + '-core', exact=True) }}
@@ -133,6 +159,13 @@ outputs:
             - ibis
             - ibis.backends.mysql
           pip_check: true
+          python_version:
+          - ${{ python_min }}.*
+      - requirements:
+          run:
+            - pip
+            - python ${{ python_min }}.*
+        script: pip check
   - package:
       name: ibis-postgres
       version: ${{ version }}
@@ -140,7 +173,7 @@ outputs:
       noarch: python
     requirements:
       host:
-        - python 3.10.*
+        - python ${{ python_min }}.*
       run:
         - python >=${{ python_min }}
         - ${{ pin_subpackage(name + '-core', exact=True) }}
@@ -151,6 +184,13 @@ outputs:
             - ibis
             - ibis.backends.postgres
           pip_check: true
+          python_version:
+          - ${{ python_min }}.*
+      - requirements:
+          run:
+            - pip
+            - python ${{ python_min }}.*
+        script: pip check
   - package:
       name: ibis-pyspark
       version: ${{ version }}
@@ -158,7 +198,7 @@ outputs:
       noarch: python
     requirements:
       host:
-        - python 3.10.*
+        - python ${{ python_min }}.*
       run:
         - python >=${{ python_min }}
         - ${{ pin_subpackage(name + '-core', exact=True) }}
@@ -170,6 +210,13 @@ outputs:
             - ibis
             - ibis.backends.pyspark
           pip_check: true
+          python_version:
+          - ${{ python_min }}.*
+      - requirements:
+          run:
+            - pip
+            - python ${{ python_min }}.*
+        script: pip check
   - package:
       name: ibis-sqlite
       version: ${{ version }}
@@ -177,7 +224,7 @@ outputs:
       noarch: python
     requirements:
       host:
-        - python 3.10.*
+        - python ${{ python_min }}.*
       run:
         - python >=${{ python_min }}
         - ${{ pin_subpackage(name + '-core', exact=True) }}
@@ -188,6 +235,13 @@ outputs:
             - ibis
             - ibis.backends.sqlite
           pip_check: true
+          python_version:
+          - ${{ python_min }}.*
+      - requirements:
+          run:
+            - pip
+            - python ${{ python_min }}.*
+        script: pip check
   - package:
       name: ibis-datafusion
       version: ${{ version }}
@@ -195,7 +249,7 @@ outputs:
       noarch: python
     requirements:
       host:
-        - python 3.10.*
+        - python ${{ python_min }}.*
       run:
         - python >=${{ python_min }}
         - ${{ pin_subpackage(name + '-core', exact=True) }}
@@ -206,6 +260,13 @@ outputs:
             - ibis
             - ibis.backends.datafusion
           pip_check: true
+          python_version:
+          - ${{ python_min }}.*
+      - requirements:
+          run:
+            - pip
+            - python ${{ python_min }}.*
+        script: pip check
   - package:
       name: ibis-duckdb
       version: ${{ version }}
@@ -213,7 +274,7 @@ outputs:
       noarch: python
     requirements:
       host:
-        - python 3.10.*
+        - python ${{ python_min }}.*
       run:
         - python >=${{ python_min }}
         - ${{ pin_subpackage(name + '-core', exact=True) }}
@@ -226,6 +287,13 @@ outputs:
             - ibis
             - ibis.backends.duckdb
           pip_check: true
+          python_version:
+          - ${{ python_min }}.*
+      - requirements:
+          run:
+            - pip
+            - python ${{ python_min }}.*
+        script: pip check
   - package:
       name: ibis-mssql
       version: ${{ version }}
@@ -233,7 +301,7 @@ outputs:
       noarch: python
     requirements:
       host:
-        - python 3.10.*
+        - python ${{ python_min }}.*
       run:
         - python >=${{ python_min }}
         - ${{ pin_subpackage(name + '-core', exact=True) }}
@@ -244,6 +312,13 @@ outputs:
             - ibis
             - ibis.backends.mssql
           pip_check: true
+          python_version:
+          - ${{ python_min }}.*
+      - requirements:
+          run:
+            - pip
+            - python ${{ python_min }}.*
+        script: pip check
   - package:
       name: ibis-bigquery
       version: ${{ version }}
@@ -251,7 +326,7 @@ outputs:
       noarch: python
     requirements:
       host:
-        - python 3.10.*
+        - python ${{ python_min }}.*
       run:
         - python >=${{ python_min }}
         - ${{ pin_subpackage(name + '-core', exact=True) }}
@@ -265,6 +340,13 @@ outputs:
             - ibis
             - ibis.backends.bigquery
           pip_check: true
+          python_version:
+          - ${{ python_min }}.*
+      - requirements:
+          run:
+            - pip
+            - python ${{ python_min }}.*
+        script: pip check
   - package:
       name: ibis-trino
       version: ${{ version }}
@@ -272,7 +354,7 @@ outputs:
       noarch: python
     requirements:
       host:
-        - python 3.10.*
+        - python ${{ python_min }}.*
       run:
         - python >=${{ python_min }}
         - ${{ pin_subpackage(name + '-core', exact=True) }}
@@ -283,6 +365,13 @@ outputs:
             - ibis
             - ibis.backends.trino
           pip_check: true
+          python_version:
+          - ${{ python_min }}.*
+      - requirements:
+          run:
+            - pip
+            - python ${{ python_min }}.*
+        script: pip check
   - package:
       name: ibis-snowflake
       version: ${{ version }}
@@ -290,7 +379,7 @@ outputs:
       noarch: python
     requirements:
       host:
-        - python 3.10.*
+        - python ${{ python_min }}.*
       run:
         - python >=${{ python_min }}
         - ${{ pin_subpackage(name + '-core', exact=True) }}
@@ -301,6 +390,13 @@ outputs:
             - ibis
             - ibis.backends.snowflake
           pip_check: true
+          python_version:
+          - ${{ python_min }}.*
+      - requirements:
+          run:
+            - pip
+            - python ${{ python_min }}.*
+        script: pip check
   - package:
       name: ibis-polars
       version: ${{ version }}
@@ -308,7 +404,7 @@ outputs:
       noarch: python
     requirements:
       host:
-        - python 3.10.*
+        - python ${{ python_min }}.*
       run:
         - python >=${{ python_min }}
         - ${{ pin_subpackage(name + '-core', exact=True) }}
@@ -319,6 +415,13 @@ outputs:
             - ibis
             - ibis.backends.polars
           pip_check: true
+          python_version:
+          - ${{ python_min }}.*
+      - requirements:
+          run:
+            - pip
+            - python ${{ python_min }}.*
+        script: pip check
   - package:
       name: ibis-druid
       version: ${{ version }}
@@ -326,7 +429,7 @@ outputs:
       noarch: python
     requirements:
       host:
-        - python 3.10.*
+        - python ${{ python_min }}.*
       run:
         - python >=${{ python_min }}
         - ${{ pin_subpackage(name + '-core', exact=True) }}
@@ -337,6 +440,13 @@ outputs:
             - ibis
             - ibis.backends.druid
           pip_check: true
+          python_version:
+          - ${{ python_min }}.*
+      - requirements:
+          run:
+            - pip
+            - python ${{ python_min }}.*
+        script: pip check
   - package:
       name: ibis-oracle
       version: ${{ version }}
@@ -344,7 +454,7 @@ outputs:
       noarch: python
     requirements:
       host:
-        - python 3.10.*
+        - python ${{ python_min }}.*
       run:
         - python >=${{ python_min }}
         - ${{ pin_subpackage(name + '-core', exact=True) }}
@@ -355,6 +465,13 @@ outputs:
             - ibis
             - ibis.backends.oracle
           pip_check: true
+          python_version:
+          - ${{ python_min }}.*
+      - requirements:
+          run:
+            - pip
+            - python ${{ python_min }}.*
+        script: pip check
   - package:
       name: ibis-exasol
       version: ${{ version }}
@@ -362,7 +479,7 @@ outputs:
       noarch: python
     requirements:
       host:
-        - python 3.10.*
+        - python ${{ python_min }}.*
       run:
         - python >=${{ python_min }}
         - ${{ pin_subpackage(name + '-core', exact=True) }}
@@ -373,6 +490,13 @@ outputs:
             - ibis
             - ibis.backends.exasol
           pip_check: true
+          python_version:
+          - ${{ python_min }}.*
+      - requirements:
+          run:
+            - pip
+            - python ${{ python_min }}.*
+        script: pip check
   - package:
       name: ibis-flink
       version: ${{ version }}
@@ -380,19 +504,24 @@ outputs:
       noarch: python
     requirements:
       host:
-        - python 3.10.*
+        - python ${{ python_min }}.*
       run:
         - python >=${{ python_min }}
         - ${{ pin_subpackage(name + '-core', exact=True) }}
         - apache-flink
-      commands:
-        - pip check
     tests:
       - python:
           imports:
             - ibis
             - ibis.backends.flink
           pip_check: true
+          python_version:
+          - ${{ python_min }}.*
+      - requirements:
+          run:
+            - pip
+            - python ${{ python_min }}.*
+        script: pip check
   - package:
       name: ibis-risingwave
       version: ${{ version }}
@@ -400,7 +529,7 @@ outputs:
       noarch: python
     requirements:
       host:
-        - python 3.10.*
+        - python ${{ python_min }}.*
       run:
         - python >=${{ python_min }}
         - ${{ pin_subpackage(name + '-core', exact=True) }}
@@ -411,6 +540,13 @@ outputs:
             - ibis
             - ibis.backends.risingwave
           pip_check: true
+          python_version:
+          - ${{ python_min }}.*
+      - requirements:
+          run:
+            - pip
+            - python ${{ python_min }}.*
+        script: pip check
   - package:
       name: ibis-athena
       version: ${{ version }}
@@ -418,7 +554,7 @@ outputs:
       noarch: python
     requirements:
       host:
-        - python 3.10.*
+        - python ${{ python_min }}.*
       run:
         - python >=${{ python_min }}
         - ${{ pin_subpackage(name + '-core', exact=True) }}
@@ -432,6 +568,13 @@ outputs:
             - ibis
             - ibis.backends.athena
           pip_check: true
+          python_version:
+          - ${{ python_min }}.*
+      - requirements:
+          run:
+            - pip
+            - python ${{ python_min }}.*
+        script: pip check
   - package:
       name: ibis-databricks
       version: ${{ version }}
@@ -439,7 +582,7 @@ outputs:
       noarch: python
     requirements:
       host:
-        - python 3.10.*
+        - python ${{ python_min }}.*
       run:
         - python >=${{ python_min }}
         - ${{ pin_subpackage(name + '-core', exact=True) }}
@@ -450,6 +593,13 @@ outputs:
             - ibis
             - ibis.backends.databricks
           pip_check: true
+          python_version:
+          - ${{ python_min }}.*
+      - requirements:
+          run:
+            - pip
+            - python ${{ python_min }}.*
+        script: pip check
 
 about:
   license: Apache-2.0
