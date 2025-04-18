@@ -1,12 +1,13 @@
-conda_forge_output_validation: true
-bot:
-  automerge: true
-  check_solvable: true
-  run_deps_from_wheel: true
 github:
   branch_name: main
   tooling_branch_name: main
 conda_build:
-  pkg_format: '2'
+  error_overlinking: true
+conda_forge_output_validation: true
+bot:
+  automerge: true
+  inspection: update-all
+  check_solvable: true
+  run_deps_from_wheel: true
 conda_install_tool: pixi
 conda_build_tool: rattler-build
