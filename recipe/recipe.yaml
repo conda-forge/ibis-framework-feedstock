@@ -127,7 +127,6 @@ outputs:
         - python >=${{ python_min }}
         - ${{ pin_subpackage(name + '-core', exact=True) }}
         - impyla >=0.17
-        - thrift ==0.11.0
     tests:
       - python:
           imports:
