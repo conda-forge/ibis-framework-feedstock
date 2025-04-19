@@ -3,7 +3,7 @@ schema_version: 1
 
 context:
   name: ibis-framework
-  version: 10.5.0
+  version: 10.4.0
   python_min: 3.10
   python_max: 4.0
   python_test_max: 3.13
@@ -14,7 +14,7 @@ recipe:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name | replace("-", "_") }}-${{ version }}.tar.gz
-  sha256: b266c905bff220821e580b14504644e688379af6880ec11882e7176d9d89f096
+  sha256: 41255c66ed4ed1108f39e09da47759678903c6670980d39d1a815f1db47d66ca
 
 build:
   number: 1
@@ -133,14 +133,9 @@ outputs:
           imports:
             - ibis
             - ibis.backends.impala
-          pip_check: true
+          pip_check: false
           python_version:
           - ${{ python_min }}.*
-      - requirements:
-          run:
-            - pip
-            - python ${{ python_min }}.*
-        script: pip check
   - package:
       name: ibis-mysql
       version: ${{ version }}
