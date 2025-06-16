@@ -3,10 +3,10 @@ schema_version: 1
 
 context:
   name: ibis-framework
-  version: 10.5.0
-  python_min: 3.10
-  python_max: 4.0
-  python_test_max: 3.13
+  version: "10.6.0"
+  python_min: '3.10'
+  python_max: '4.0'
+  python_test_max: '3.13'
 
 recipe:
   name: ${{ name }}-ext
@@ -14,10 +14,10 @@ recipe:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name | replace("-", "_") }}-${{ version }}.tar.gz
-  sha256: b266c905bff220821e580b14504644e688379af6880ec11882e7176d9d89f096
+  sha256: 58dae8c926f4cef611e90e289ce8ff3ff00a06c1be32ecae4d9bede68f806f8a
 
 build:
-  number: 1
+  number: 0
 
 outputs:
   - package:
@@ -57,7 +57,7 @@ outputs:
             - ibis
           pip_check: true
           python_version:
-          - ${{ python_min }}.*
+            - ${{ python_min }}.*
       - requirements:
           run:
             - pip
@@ -84,7 +84,7 @@ outputs:
             - ibis.backends.duckdb
           pip_check: true
           python_version:
-          - ${{ python_min }}.*
+            - ${{ python_min }}.*
       - requirements:
           run:
             - pip
@@ -109,7 +109,7 @@ outputs:
             - ibis.backends.clickhouse
           pip_check: true
           python_version:
-          - ${{ python_min }}.*
+            - ${{ python_min }}.*
       - requirements:
           run:
             - pip
@@ -134,7 +134,7 @@ outputs:
             - ibis.backends.impala
           pip_check: false
           python_version:
-          - ${{ python_min }}.*
+            - ${{ python_min }}.*
   - package:
       name: ibis-mysql
       version: ${{ version }}
@@ -154,7 +154,7 @@ outputs:
             - ibis.backends.mysql
           pip_check: true
           python_version:
-          - ${{ python_min }}.*
+            - ${{ python_min }}.*
       - requirements:
           run:
             - pip
@@ -179,7 +179,7 @@ outputs:
             - ibis.backends.postgres
           pip_check: true
           python_version:
-          - ${{ python_min }}.*
+            - ${{ python_min }}.*
       - requirements:
           run:
             - pip
@@ -205,7 +205,7 @@ outputs:
             - ibis.backends.pyspark
           pip_check: true
           python_version:
-          - ${{ python_min }}.*
+            - ${{ python_min }}.*
       - requirements:
           run:
             - pip
@@ -230,7 +230,7 @@ outputs:
             - ibis.backends.sqlite
           pip_check: true
           python_version:
-          - ${{ python_min }}.*
+            - ${{ python_min }}.*
       - requirements:
           run:
             - pip
@@ -255,7 +255,7 @@ outputs:
             - ibis.backends.datafusion
           pip_check: true
           python_version:
-          - ${{ python_min }}.*
+            - ${{ python_min }}.*
       - requirements:
           run:
             - pip
@@ -282,7 +282,7 @@ outputs:
             - ibis.backends.duckdb
           pip_check: true
           python_version:
-          - ${{ python_min }}.*
+            - ${{ python_min }}.*
       - requirements:
           run:
             - pip
@@ -307,7 +307,7 @@ outputs:
             - ibis.backends.mssql
           pip_check: true
           python_version:
-          - ${{ python_min }}.*
+            - ${{ python_min }}.*
       - requirements:
           run:
             - pip
@@ -335,7 +335,7 @@ outputs:
             - ibis.backends.bigquery
           pip_check: true
           python_version:
-          - ${{ python_min }}.*
+            - ${{ python_min }}.*
       - requirements:
           run:
             - pip
@@ -360,7 +360,7 @@ outputs:
             - ibis.backends.trino
           pip_check: true
           python_version:
-          - ${{ python_min }}.*
+            - ${{ python_min }}.*
       - requirements:
           run:
             - pip
@@ -385,7 +385,7 @@ outputs:
             - ibis.backends.snowflake
           pip_check: true
           python_version:
-          - ${{ python_min }}.*
+            - ${{ python_min }}.*
       - requirements:
           run:
             - pip
@@ -410,7 +410,7 @@ outputs:
             - ibis.backends.polars
           pip_check: true
           python_version:
-          - ${{ python_min }}.*
+            - ${{ python_min }}.*
       - requirements:
           run:
             - pip
@@ -435,7 +435,7 @@ outputs:
             - ibis.backends.druid
           pip_check: true
           python_version:
-          - ${{ python_min }}.*
+            - ${{ python_min }}.*
       - requirements:
           run:
             - pip
@@ -460,7 +460,7 @@ outputs:
             - ibis.backends.oracle
           pip_check: true
           python_version:
-          - ${{ python_min }}.*
+            - ${{ python_min }}.*
       - requirements:
           run:
             - pip
@@ -485,7 +485,7 @@ outputs:
             - ibis.backends.exasol
           pip_check: true
           python_version:
-          - ${{ python_min }}.*
+            - ${{ python_min }}.*
       - requirements:
           run:
             - pip
@@ -510,7 +510,7 @@ outputs:
             - ibis.backends.flink
           pip_check: true
           python_version:
-          - ${{ python_min }}.*
+            - ${{ python_min }}.*
       - requirements:
           run:
             - pip
@@ -535,7 +535,7 @@ outputs:
             - ibis.backends.risingwave
           pip_check: true
           python_version:
-          - ${{ python_min }}.*
+            - ${{ python_min }}.*
       - requirements:
           run:
             - pip
@@ -563,7 +563,7 @@ outputs:
             - ibis.backends.athena
           pip_check: true
           python_version:
-          - ${{ python_min }}.*
+            - ${{ python_min }}.*
       - requirements:
           run:
             - pip
@@ -588,7 +588,7 @@ outputs:
             - ibis.backends.databricks
           pip_check: true
           python_version:
-          - ${{ python_min }}.*
+            - ${{ python_min }}.*
       - requirements:
           run:
             - pip
