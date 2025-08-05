@@ -84,6 +84,7 @@ outputs:
           run:
             - pip
             - python ${{ python_min }}.*
+            - python-duckdb
         script: pip check
   - package:
       name: ibis-clickhouse
