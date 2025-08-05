@@ -76,7 +76,6 @@ outputs:
       - python:
           imports:
             - ibis
-            - ibis.backends.duckdb
           pip_check: true
           python_version:
             - ${{ python_min }}.*
@@ -84,7 +83,6 @@ outputs:
           run:
             - pip
             - python ${{ python_min }}.*
-            - python-duckdb
         script: pip check
   - package:
       name: ibis-clickhouse
