@@ -72,6 +72,8 @@ outputs:
       run:
         - python >=${{ python_min }}
         - ${{ pin_subpackage(name + '-core', exact=True) }}
+        - tzdata>=2022.7
+        - packaging>=21.3
     tests:
       - python:
           imports:
