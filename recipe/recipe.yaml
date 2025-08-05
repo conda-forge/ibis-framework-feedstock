@@ -41,6 +41,14 @@ outputs:
         - toolz >=0.11,<1
         - typing-extensions >=4.3.0
         - tzdata>=2022.7
+      run_constraints:
+        - pandas >=1.5.3,<3
+        - pyarrow >=10.0.1
+        - numpy >=1.23.2,<3
+        - packaging >=21.3
+        - rich>=12.4.4
+        - pyarrow-hotfix >=0.4
+        - packaging>=21.3
     tests:
       - python:
           imports:
@@ -52,6 +60,7 @@ outputs:
           run:
             - pip
             - python ${{ python_min }}.*
+            - packaging >=21.3
         script: pip check
   - package:
       name: ${{ name }}
