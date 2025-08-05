@@ -84,7 +84,6 @@ outputs:
           run:
             - pip
             - python ${{ python_min }}.*
-            - packaging >=21.3
         script: pip check
   - package:
       name: ibis-clickhouse
