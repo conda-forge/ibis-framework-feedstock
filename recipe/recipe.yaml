@@ -3,7 +3,7 @@ schema_version: 1
 
 context:
   name: ibis-framework
-  version: "11.0.0"
+  version: "12.0.0"
   python_min: '3.10'
   python_max: '4.0'
   python_test_max: '3.13'
@@ -14,7 +14,7 @@ recipe:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name | replace("-", "_") }}-${{ version }}.tar.gz
-  sha256: 0249185eaabb800e224f448cc06ce8ba168df00b269e132d62629f462eca8842
+  sha256: 238624f2c14fdab8382ca2f4f667c3cdb81e29844cd5f8db8a325d0743767c61
 
 build:
   number: 0
