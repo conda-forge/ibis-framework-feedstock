@@ -17,7 +17,7 @@ source:
   sha256: 238624f2c14fdab8382ca2f4f667c3cdb81e29844cd5f8db8a325d0743767c61
 
 build:
-  number: 0
+  number: 1
 
 outputs:
   - package:
@@ -39,7 +39,7 @@ outputs:
         - filelock >=3.7.0,<4
         - numpy >=1.23.2,<3
         - packaging >=21.3
-        - pandas >=1.5.3,<3
+        - pandas >=1.5.3,<4
         - parsy >=2
         - pyarrow >=10.0.1
         - pyarrow-hotfix >=0.4
